@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts 
+Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="html_Tag_1Form" type="form.HTML_Tag_1Form" />
+	</form-beans>
+	<action-mappings>
+		<action name="html_Tag_1Form"
+			path="/htmlTag1" scope="request" type="action.HTML_Tag_1Action">
+			<forward name="vinhuni" path="/HTML_Tag_1.jsp"/>
+		</action>
+	</action-mappings>
+</struts-config>
