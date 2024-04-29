@@ -54,7 +54,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>2.2.220</version>
+			<version>1.4.195</version>
 		</dependency>
 
 		<!-- Hibernate Dependency -->
@@ -116,7 +116,7 @@
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>1.2.13</version>
+			<version>1.2.3</version>
 		</dependency>
 
 		<dependency>
