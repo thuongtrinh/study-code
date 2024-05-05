@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "country-detail.component.scss"
+    ],
+    "names": [],
+    "file": "country-detail.component.css"
+}

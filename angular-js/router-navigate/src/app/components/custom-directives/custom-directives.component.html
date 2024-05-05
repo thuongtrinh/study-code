@@ -1,0 +1,96 @@
+<h2 class="text-center">Tutorial about custom directive</h2><br/>
+
+<p appRed> myRed Directive Demo</p>
+
+<div appTheme> niceTheme Directive Demo</div>
+
+<div appColorInput inputColor="blue"> myColor Directive Demo</div>
+
+<p [appTextSize]="txtsize"> textSize Directive Demo using Bracket []</p>
+
+<p bind-appTextSize="txtsize"> textSize Directive Demo using bind-prefix/p>
+
+<p appTextSize="{{txtsize}}"> textSize Directive Demo using Interpolation</p>
+
+<div appCustomTheme> customTheme Directive Demo with Default Settings</div>
+
+<div appCustomTheme tcolor="navy" bcolor="darkgray" tsize="30px">
+  customTheme Directive Demo with Custom Settings</div>
+
+<p appMouse> mouseAction Directive Demo</p>
+
+<div>
+  <select [(ngModel)]="myColor">
+    <option value='' selected> Select Color </option>
+    <option *ngFor = "let color of colors" [value] = "color">
+      {{color}}
+    </option>
+  </select>
+  <p [appDynamicColor]="myColor" defaultValue="red"> dynamicColor Directive Demo</p>
+</div>
+
+<!-- /////////////////Start cpIf////////////////// -->
+<h3>cpIf Directive</h3>
+<div>
+  <input type="radio" name="rad1" (click)="showCpIf= true; delayInSec=0" id="id1"> <label for="id1">True</label>&nbsp;&nbsp;
+  <input type="radio" name="rad1" (click)="showCpIf= false; delayInSec=0" id="id2"> <label for="id2">False</label>
+</div>
+<div *appCpIf="showCpIf">
+  <b>Hello cpIf Directive.</b>
+</div>
+<ng-template [appCpIf]="!showCpIf">
+	<div>
+	  <b>Message not Available.</b>
+	</div>
+</ng-template>
+<!-- ////////////////End cpIf/////////////////// -->
+
+<h3>cpLoop Directive</h3>
+<ul>
+  <li *appCpLoop="5">Hello World!</li>
+</ul>
+
+<div class="mbot-50">
+  <h3>cpDelay Directive</h3>
+  <div>
+    Show message after
+    <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 2000"> 2 Seconds
+    <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 5000"> 5 Seconds
+    <input type="radio" name="rad2" (click)= "showCpDelay= true; delayInSec = 7000"> 7 Seconds
+  </div>
+  <br/>
+  <div *appCpIf="showCpDelay">
+    <div *appCpDelay="delayInSec">
+        <b> Hello cpDelay Directive. </b>
+    </div>
+  </div>
+</div>
+
+<div class="mbot-50">
+  <p>--------------NG-IF--------------</p>
+  <app-ngif-then-else></app-ngif-then-else>
+</div>
+
+<div class="mbot-100">
+  <p>--------------NG-FOR-OF--------------</p>
+  <div>
+    <b>Add Person</b>
+    <button class="btn btn-primary ml-3" (click)="add()">ADD</button>
+
+    <br><p><b>Aliasing ngForOf </b></p>
+    <ul>
+      <li *ngFor="let person of obsPersons$ | async as persons; index as i">
+          {{i + 1}} out of {{persons.length}}: {{person.personId}} - {{person.name}} - {{person.age}}
+          <input [(ngModel)]="person.name"> <button (click)="remove(person.personId)">Remove</button>
+      </li>
+    </ul>
+
+    <br/><b>Using trackBy </b>
+    <ul>
+      <li *ngFor="let person of allPersons; index as i; trackBy: personTrackByFn">
+          {{i + 1}}: {{person.personId}} - {{person.name}} - {{person.age}}
+          <input [(ngModel)]="person.name"> <button (click)="remove(person.personId)">Remove</button>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAC,EAAE,CAAA;EACV,KAAK,EAAE,IAAI;CACZ",
+    "sources": [
+        "book.component.scss"
+    ],
+    "names": [],
+    "file": "book.component.css"
+}

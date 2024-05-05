@@ -1,0 +1,246 @@
+<h2 class="text-center">City management</h2>
+<div class="row">
+  <div class="column">
+    <div class="col-md-9">
+      <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+        <p>
+          <b>Name:</b>
+          <input class="form-control" ngModel name="name" #userName="ngModel" required>
+        </p>
+        <p>
+          <b>City:</b>
+          <input class="form-control" [ngModel]="msg" name="city" #userCity="ngModel">
+        </p>
+        <p>
+          <b>State:</b>
+          <input class="form-control" ngModel name="state">
+        </p>
+        <div class="mt-4">
+          <button class="btn btn-primary" >Submit</button>
+          <button class="btn btn-primary ml-4" (click)="resetUserForm(userForm)">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="column">
+    {{msg}}
+    <div class="mt-4">
+      <p><b>Form value:</b> {{ userForm.value | json }}</p>
+      <p><b>Form valid:</b> {{ userForm.valid }}</p>
+      <p><b>Form touched:</b> {{ userForm.touched }}</p>
+      <p><b>Form submitted:</b> {{ userForm.submitted }}</p>
+      <p><b>Form pristine:</b> {{ userForm.pristine }}</p>
+    </div>
+    <div>
+      <p><b>Name value:</b> {{ userName.value }}</p>
+      <p><b>Name vaild:</b> {{ userName.valid }}</p>
+    </div>
+    <div>
+      <p><b>City value:</b> {{ userCity.value }}</p>
+      <p><b>City vaild:</b> {{ userCity.valid }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Study angular binding -->
+<div class="mbot-50">
+  Logo: <img [src]="website.logo"/>
+
+  <br/><br/>Logo: <img bind-src="website.logo"/>
+
+  <br/><br/>Logo: <img src="{{website.logo}}"/>
+
+  <br/><br/>Url: <a [href]="website.url" [textContent]="website.name"> </a>
+
+  <br/>Url: <a bind-href="website.url" bind-textContent="website.name"> </a>
+
+  <br/>Url: <a href="{{website.url}}" textContent="{{website.name}}"> </a>
+
+  <br/><br/>
+  <p [textContent]="website.description"> </p>
+
+  <p bind-textContent="website.description"> </p>
+
+  <p textContent="{{website.description}}"> </p>
+
+  <br/><button class="btn btn-primary" [disabled]="flag">Submit</button>
+  <button class="btn btn-primary ml-4" bind-disabled="!flag">Submit</button>
+
+  <br/><br/>
+  <p [ngClass]="'one two'"> Angular Property Binding Example case 1</p>
+
+  <p bind-ngClass="'one two'"> Angular Property Binding Example case 2</p>
+
+  <p ngClass="{{'one two'}}"> Angular Property Binding Example case 3</p>
+
+  <p class="one two"> Angular Property Binding Example case 4</p>
+
+  <app-msg  prefixMsg= "Website name is " [siteName] = "website.name"> </app-msg>
+
+  <app-msg prefixMsg= "Website name is " bind-siteName = "website.name"> </app-msg>
+
+  <app-msg prefixMsg= "Website name is " siteName = "{{website.name}}"> </app-msg>
+</div>
+
+<!-- Study angular event binding -->
+<div class="mbot-50">
+    <b>-------------Input Event Binding -------------</b><br/>
+    <input [value]="msg1" (input)="msg1=$event.target.value">
+    <input [value]="msg1" (input)="setMsg($event.target.value)">
+    {{msg1}}
+
+    <br/><br/><b>Click Event Binding </b><br/>
+    <button class="btn btn-primary" (click)="flag=true">True</button>
+    <button class="btn btn-primary ml-2" (click)="flag=false">False</button>
+    <p *ngIf="flag">
+      Data is valid.
+    </p>
+    <p *ngIf="!flag">
+      Data is not valid.
+    </p>
+
+    <b>Keydown and Keyup Event Binding </b><br/>
+    <input on-keydown="msg2='Key down'" (keyup)="msg2='Key Up'" >
+    {{msg2}}
+
+    <br/><br/><b>Change Event Binding </b><br/>
+    <input on-change="changeText($event.target.value)">
+    <p [innerHTML] = "msg3"> </p>
+</div>
+
+<!-- EventEmitter binding -->
+<div class="mbot-50">
+  <b>-------------EventEmitter Binding -------------</b><br/>
+  <b>Input Event EventEmitter </b><br/>
+  <app-msg-country [countryName]="countryDefault" (updateCountry)="saveData($event)"></app-msg-country>
+  <p>Contry name is: {{countryNew}}</p>
+</div>
+
+<!--  NgStyle binding -->
+<div class="mbot-50">
+  <b>-------------Style binding-------------</b><br/>
+  <p [style.color] = "result > 30 ? 'blue' : 'green'"> Hello Color World! </p>
+  <p bind-style.color="result > 30 ? 'blue' : 'green'"> Hello Color World! </p>
+  <p style.color="{{result > 30 ? 'blue' : 'green'}}">Hello Color World! </p>
+
+  <button class="btn"
+    [style.background-color]="colorFlag ? 'cyan' : 'grey'"
+    [style.color]="isRed(8) ? 'red' : 'black'"
+      >Button</button>
+
+  <div [style.font-size.em]="isSmall ? small/8 : big/8">Font size test with em</div>
+  <div [style.font-size.px]="!isSmall ? small : big">Font size test with px</div>
+  <div [style.font-size.pt] = "isSmall ? small : big" > Font Size Test with pt</div>
+  <div [style.font-size.%] = "!isSmall ? small * 10: big * 10" > Font Size Test with %</div>
+
+  <div [style.background-image] = "isBackgroundRed
+    ? 'url(\'assets/images/red.gif\')' : 'url(\'assets/images/green.gif\')'">
+    Style Binding Example
+  </div>
+
+  <br/>
+  <div [ngStyle]="allRequiredStyles('one')">NgStyle Example</div>
+  <div bind-ngStyle="allRequiredStyles('two')">NgStyle Example</div>
+
+  <br/>
+  <table [border]="bdr" [attr.height]="h" [width]="w">
+    <tr>
+       <td [attr.colspan]="clspn"> A + B </td>
+    </tr>
+    <tr>
+       <td> C </td>
+       <td> D </td>
+    </tr>
+  </table>
+</div>
+
+<!--  Two way binding -->
+<div class="mbot-50">
+    <b>-------------Two way binding-------------</b><br/>
+    <b>1. alias-app</b><br/>
+    <!-- <app-alias [(myCity)]="city"></app-alias> {{city}} -->
+    <app-alias bindon-myCity="city"></app-alias> {{city}}
+
+    <br/><b>2. size-app</b><br/>
+    <app-textsize [(cdTextSize)] ="textSize"></app-textsize>
+    <p [style.font-size.px]="textSize">Hello World!</p>
+
+    <br/><b>3. select-app</b><br/>
+    <app-selectbox [cdColor]="colors"></app-selectbox>
+
+    <br/><b>4. case-app</b><br/>
+    <app-case [(myName)]="myNameInit"></app-case>
+    {{myNameInit}}
+
+    <br/><br/><b>5. upper-case-app</b><br/>
+    <app-uppercase></app-uppercase>
+</div>
+
+<!--  CHARTER 2: DIRECTIVES -->
+<div class="mbot-50">
+  <b>-------------CHARTER 2: DIRECTIVES-------------</b><br/>
+  <b> *ngFor Demo</b>
+  <ul>
+    <li *ngFor="let emp of emps; let i = index; let f=first; let l=last; let e=even; let o=odd;">
+        Row {{i}} : {{emp.name}} - {{emp.age}}, is first row: {{f}}, is last row: {{l}},
+         is even row: {{e}}, is odd row: {{o}}
+    </li>
+  </ul>
+
+  <b> ngFor with ng-template</b>
+  <ul>
+    <ng-template ngFor let-emp [ngForOf]="emps" let-i="index" let-odd="odd" trackBy:emp.id>
+        <li [class.odd]="odd">
+            ({{i}}) {{emp.name}}
+        </li>
+    </ng-template>
+  </ul>
+
+  <br/><b>ngFor with component element using *ngFor</b>
+  <app-emp-tag *ngFor="let emp of emps index as i; even as isEven;" [emp]="emp"></app-emp-tag>
+
+  <br/><b>ngFor with component element using ng-template directive </b>
+  <ng-template ngFor let-emp [ngForOf]="emps" let-i="index" let-odd="odd" trackBy:emp.id>
+      <app-emp-tag [emp]="emp"></app-emp-tag>
+  </ng-template>
+
+  <div class="mbot-50">
+    <b>-------------ngswitchCase-------------</b><br/>
+    <ul [ngSwitch]="person">
+      <li *ngSwitchCase="'Mohan'">Hello Mohan</li>
+      <li>Hello 32</li>
+      <li *ngSwitchCase="'Sohan'">Hello Sohan</li>
+      <li>Hello 33</li>
+      <li *ngSwitchCase="'Vijay'">Hello Vijay</li>
+      <li *ngSwitchDefault>Bye Bye</li>
+    </ul>
+
+    <div *ngFor="let id of ids">
+      Id is {{id}}
+      <div ngSwitch="{{id%2}}">
+        <div *ngSwitchCase="'0'" [ngClass]="'one'">I am Even.</div>
+        <div *ngSwitchCase="'1'" [ngClass]="'two'">I am Odd.</div>
+        <div *ngSwitchDefault>Nothing Found.</div>
+      </div>
+    </div>
+
+    <br>
+    <div [ngSwitch]="myDir">
+      <b *ngSwitchCase="dirEnum.East"> East Direction</b>
+      <b *ngSwitchCase="dirEnum.West"> West Direction</b>
+      <b *ngSwitchCase="dirEnum.North">North Direction</b>
+      <b *ngSwitchCase="dirEnum.South">South Direction</b>
+      <b *ngSwitchDefault>No Direction</b>
+    </div>
+
+    <br>
+    <div [ngSwitch]="myDir">
+      <ng-template [ngSwitchCase]= "dirEnum.East"> <b> East Direction</b> </ng-template>
+      <ng-template [ngSwitchCase]= "dirEnum.West"> <b> West Direction</b> </ng-template>
+      <ng-template [ngSwitchCase]= "dirEnum.North"> <b>North Direction</b> </ng-template>
+      <ng-template [ngSwitchCase]= "dirEnum.South"> <b>South Direction</b> </ng-template>
+      <ng-template ngSwitchDefault> <b> No Direction</b> </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="mbot-50">
+  <h4>1. Material radio</h4>
+  <mat-radio-group (change)="onChange($event)" name="gender">
+    <mat-radio-button value="m">Male</mat-radio-button>&nbsp;&nbsp;&nbsp;
+    <mat-radio-button value="f">Female</mat-radio-button>
+  </mat-radio-group>
+  <br/>
+
+  <b>----------------------------------------------</b><br/>
+
+  <mat-radio-group disabled>
+    <mat-radio-button value="t">True</mat-radio-button>&nbsp;&nbsp;&nbsp;
+    <mat-radio-button value="f">False</mat-radio-button>
+  </mat-radio-group>
+  <br/>
+
+  <b>----------------------------------------------</b><br/>
+
+  <mat-radio-group >
+    <mat-radio-button value="1" #email>Email</mat-radio-button>&nbsp;&nbsp;&nbsp;
+    <mat-radio-button value="2">Mobile</mat-radio-button>
+  </mat-radio-group ><br/><br/>
+  <button mat-raised-button (click)="focusOnEmailRB()">Focus on mail</button>
+</div>
+
+<div class="mbot-50">
+  <h4>2. Person Reactive Form</h4>
+  <form [formGroup]="personForm" #psForm="ngForm" (ngSubmit)="onFormSubmit()">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+        <mat-error *ngIf="name.hasError('required')">
+          Name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <p>Notification Type *:</p>
+      <mat-radio-group formControlName="notificationType">
+        <mat-radio-button value="1" color="primary" class="person-radio-button">Email</mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-button value="2" color="accent" class="person-radio-button">Mobile</mat-radio-button>&nbsp;&nbsp;
+        <mat-radio-button value="3" color="warn" class="person-radio-button">Both</mat-radio-button>&nbsp;&nbsp;
+      </mat-radio-group>
+      <div *ngIf="notificationType.hasError('required') && psForm.submitted" class="error">
+        Notification Type is required.
+      </div>
+    </div>
+    <br/>
+    <div>
+      <p>Language:</p>
+      <mat-radio-group formControlName="language" class="person-radio-group">
+        <mat-radio-button class="person-radio-button" *ngFor="let lang of languages" [value]="lang.id">
+          {{lang.name}}&nbsp;&nbsp;
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <br/>
+    <div>
+      <button mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>

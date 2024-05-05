@@ -1,0 +1,16 @@
+<h3>Angular KeyValueDiffers + Detect Changes in Objects</h3><br>
+<h4>1. Example KeyValueDiffers</h4>
+<button class="btn btn-primary" (click)="add()">Add</button> <br><br>
+<button class="btn btn-success" (click)="update()">Update</button><br><br>
+<button class="btn btn-danger" (click)="delete()">Delete</button> <br><br>
+<app-emp-differs [empArray]="empArray"></app-emp-differs>
+
+<br><br>
+<h4>2. Example IterableDiffers</h4>
+<div [nbClass]="klass">Hello Angular - ['color', 'bg', 'border']</div>
+
+<button class="btn btn-primary" (click)="change()" style="margin-top: 2em;">
+    Change to ['color']</button><br>
+<button class="btn btn-primary" (click)="changeTwo()" style="margin-top: 2em;">
+    Change to ['color', 'border']</button>
+<br><br><br><br><br><br>

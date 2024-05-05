@@ -1,0 +1,25 @@
+<h3 class="text-center mb-3">Country List</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>CountryId</th>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Currency</th>
+      <td></td>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let country of countries | async">
+      <td>{{ country.countryId }}</td>
+      <td><a [routerLink]="['/country/detail', country.countryId]"
+                routerLinkActive="router-link-active" >{{ country.name }}</a></td>
+      <td>{{ country.capital }}</td>
+      <td>{{ country.currency }}</td>
+      <td>
+        <button class="btn btn-info" [routerLink]="['/country/edit', country.countryId]"
+          routerLinkActive="router-link-active">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

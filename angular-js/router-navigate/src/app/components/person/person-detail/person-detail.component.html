@@ -1,0 +1,13 @@
+<h3 class="text-center mb-3">Person Details</h3>
+<div *ngIf="person">
+  <p><b>Id:</b> {{person.personId}}</p>
+  <p><b>Name:</b> {{person.name}}</p>
+  <p><b>Age:</b> {{person.age}}</p>
+  <p><b>Gender:</b> {{person.gender}}</p>
+  <p><b>Mobile:</b> {{person.mobile}}</p>
+  <p><b>House number:</b> {{person.houseNumber}}</p>
+  <p><b>City:</b> {{person.city}}</p>
+  <p><b>Country:</b> {{person.country}}</p>
+  <p><b>Married:</b> {{person.married ? 'Yes' : 'No' }}</p>
+  <p><b>Position:</b> {{person.position}}</p>
+</div>

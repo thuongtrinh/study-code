@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,QAAQ,EAAE,QAAQ;EAClB,gBAAgB,EAAE,OAAO;EACzB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,EAAE;EACR,MAAM,EAAE,eAAe;CACxB",
+    "sources": [
+        "book-update.component.scss"
+    ],
+    "names": [],
+    "file": "book-update.component.css"
+}

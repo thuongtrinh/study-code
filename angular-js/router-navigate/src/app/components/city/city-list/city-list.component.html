@@ -1,0 +1,15 @@
+<h3 class="text-center">City list</h3>
+<div class="pt-4">
+  <form [formGroup]="cityForm" (ngSubmit)="onSubmitForm()">
+    <div formArrayName="cities">
+      <div *ngFor="let city of cities.controls; index as idx" class="input-group p-2">
+        <input class="form-control col-md-3" [formControlName]="idx" placeholder="Enter city name">
+        <button class="btn btn-danger ml-3" (click)="deleteCityField(idx)">Delete</button>
+      </div>
+    </div>
+    <div class="my-3 p-2">
+        <button type="submit" class="btn btn-primary mr-3">Submit</button>
+        <button type="button" (click)="addCityField()" class="btn btn-primary">Add more city</button>
+    </div>
+  </form>
+</div>

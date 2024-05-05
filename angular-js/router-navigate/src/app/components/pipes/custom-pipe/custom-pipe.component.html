@@ -1,0 +1,71 @@
+<div class="mbot-100">
+  <h4>1. Using welcome Pipe</h4>
+  {{person.name | welcome}}<br>
+
+  <br><h4>2. Using strformat Pipe</h4>
+  {{message | strformat}}
+
+  <br><br><h4>3. Using division Pipe</h4>
+  <div>Dividend: <input class="form-control col-md-4" [(ngModel)]="dividend"> </div>
+  <div>Divisor: <input class="form-control col-md-4" [(ngModel)]="divisor"> </div>
+  <p class="success">Division Result: {{dividend | division: divisor}}</p>
+
+  <h4>4. Using repeat Pipe</h4>
+  {{person.name | repeat: 5}}
+
+  <br><br><h4>5. Using myjson Pipe</h4>
+  <pre>{{person | myjson}}</pre>
+  <pre>{{person | myjson:5}}</pre>
+  <pre>{{person | myjson:0:'id,age'}}</pre>
+  <pre>{{person | myjson:5:'id,age'}}</pre>
+
+  <h3>6. Using myuppercaseone and myuppercasetwo Pipe</h3>
+  {{message | myuppercaseone}} <br/>
+  {{message | myuppercasetwo : '+'}} <br/>
+
+  <br><h3>7. Chaining of Custom Pipes</h3>
+  {{person.name | repeat:5 | myuppercaseone}}
+
+  <br><br><h3>8. Using Pure and Impure Pipe</h3>
+  Company Name:
+  <div class="d-flex flex-row align-items-center">
+    <input class="form-control col-md-3 mr-2" [(ngModel)] ="compName"/>
+    <div class="text-success">{{compName}}</div>
+  </div>
+
+  <br>Location:
+  <div class="d-flex flex-row align-items-center">
+    <input class="form-control col-md-3 mr-2" [(ngModel)] ="compLocation"/>
+    <div class="text-success">{{compLocation}}</div>
+  </div>
+
+  <br/><button class="btn btn-primary mr-4" (click)="updateCompany()">Update Existing</button>
+  <button class="btn btn-primary" (click)="createCompany()">Create New </button>
+
+  <br/><br/>
+  <b>a. Using Pure Pipe : companyone</b>
+  <div class="ml-3">{{company | companyone}}</div>
+
+  <br/>
+  <b>b. Using Impure Pipe : companytwo</b>
+  <div class="ml-3">{{company | companytwo}}</div>
+
+  <br><h3>9. Asyn Pipes</h3>
+  <h5>a. AsyncPipe with Date</h5>
+  <div>{{ observableTime | async }} </div>
+  <div>{{ observableTime | async | date : 'mediumTime' }} </div>
+
+  <br><h5>b. AsyncPipe with NgIf</h5>
+  <div *ngIf="promiseBook | async as book; else loading" class="text-success">
+      Id: {{book.id}}, Name: {{book.name}}
+  </div>
+  <ng-template #loading>
+    <span class="text-danger">Loading Data...</span>
+  </ng-template>
+
+  <br><h5>c. AsyncPipe with NgSwitch</h5>
+  <div [ngSwitch]="(promiseBook | async)?.id">
+      <div *ngSwitchCase="100" class="text-success">Find Actual Data</div>
+      <div *ngSwitchDefault class="text-danger">Showing Default Data</div>
+  </div>
+</div>

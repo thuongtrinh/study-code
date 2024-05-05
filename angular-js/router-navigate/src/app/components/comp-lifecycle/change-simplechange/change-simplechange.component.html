@@ -1,0 +1,14 @@
+<p>
+  change-simplechange works!
+</p>
+<div>
+    <form class="form-group" #empForm="ngForm" (ngSubmit)="onFormSubmit(empForm)">
+      <p>Name: <input class="form-control col-md-4" name="name" [ngModel]="emp.name"></p>
+      <p>Age: <input class="form-control col-md-4" name="age" [ngModel]="emp.age"></p>
+      <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<div class="message">
+	<p>Message: <input class="form-control col-md-3" [(ngModel)]="msg"/></p>
+</div>
+<app-emp [employee]="emp" [message]="msg"></app-emp>

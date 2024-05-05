@@ -1,0 +1,50 @@
+<h3 class="text-center mb-4">Add Person</h3>
+<div class="offset-md-3 col-md-8">
+    <!-- <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()"> -->
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-7">
+            <input class="form-control" [formControl]="name">
+            <label *ngIf="name.invalid && name.touched" [ngClass]="'error'">Name required with max 15 characters</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">Age</label>
+          <div class="col-sm-7">
+            <input class="form-control" type="number" [formControl]="age">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="city" class="col-sm-2 col-form-label">City</label>
+          <div class="col-sm-7">
+            <input class="form-control" [formControl]="city">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="country" class="col-sm-2 col-form-label">Country</label>
+          <div class="col-sm-7">
+            <input class="form-control" [formControl]="country">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+          <div class="col-sm-7">
+            <input class="form-control" [formControl]="mobile">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2 col-form-label"></label>
+          <div class="form-check col-sm-7" style="padding-left: 15px;">
+            <input type="checkbox" id="marriedId" [checked]="married.value" [formControl]="married">
+            <label for="marriedId" class="form-check-label pl-2">Are you married?</label>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-sm-2"></label>
+          <div class="col-sm-7">
+            <button class="btn btn-primary" (click)="register()">Add</button>
+            <button class="btn btn-primary ml-4" (click)="resetAll()">Reset</button>
+          </div>
+        </div>
+      <!-- </form> -->
+</div>

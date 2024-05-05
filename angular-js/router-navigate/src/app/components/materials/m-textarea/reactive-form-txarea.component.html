@@ -1,0 +1,157 @@
+<div class="mbot-50">
+  <h4>1. Textarea validation</h4>
+  <div>
+    <mat-form-field>
+      <textarea matInput
+        placeholder="Comment"
+        [formControl]="commentFC"
+        (change)="onCommentChange()">
+      </textarea>
+      <mat-error *ngIf="commentFC.hasError('required')">
+        Comment is required.
+      </mat-error>
+      <mat-error *ngIf="commentFC.hasError('maxlength')">
+        Max length is 30
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <h4>2. Textarea autosize</h4>
+  <div>
+    <mat-form-field>
+      <textarea matInput
+        placeholder="Description"
+        [formControl]="descFC"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="1"
+        cdkAutosizeMaxRows="5"
+        #autosize="cdkTextareaAutosize"
+        (change)="onDescChange()">
+      </textarea>
+    </mat-form-field>
+  </div>
+
+  <h4>3. resizeToFitContent() and Reset() test</h4>
+  <div>
+    <mat-form-field>
+      <textarea matInput
+        placeholder="Content"
+        [formControl]="contentFC"
+        cdkTextareaAutosize
+        cdkAutosizeMinRows="2"
+        cdkAutosizeMaxRows="5"
+        #cfcAutosize="cdkTextareaAutosize">
+      </textarea>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" (click)="resetTextAreaSize()">Reset textare size</button>
+    </div>
+  </div>
+  <br>
+  <div>
+    <mat-form-field>
+      <mat-label>Select font size</mat-label>
+      <mat-select #fontSize value="15px" (selectionChange)="resizeTextArea()">
+        <mat-option value="10px">10px</mat-option>
+        <mat-option value="15px">15px</mat-option>
+        <mat-option value="20px">20px</mat-option>
+        <mat-option value="20px">30px</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <h4>4. Person Reactive Form</h4>
+  <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+    <div>
+      <mat-form-field>
+        <input matInput
+          placeholder="Name"
+          formControlName="name"
+          [errorStateMatcher]="esMatcher">
+
+        <mat-error *ngIf="name.hasError('required')">
+          Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <textarea matInput
+          placeholder="Address"
+          formControlName="address"
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="2"
+          cdkAutosizeMaxRows="4"
+          [errorStateMatcher]="esMatcher">
+        </textarea>
+        <mat-error *ngIf="address.hasError('required')">
+          Comment is required.
+        </mat-error>
+        <mat-error *ngIf="address.hasError('maxlength')">
+          Max length is 100.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="color" formControlName="favColor" placeholder="Favorite color">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="date" formControlName="dob" placeholder="Date of birth">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="time" formControlName="tob" placeholder="Time of birth">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput type="number" formControlName="age" placeholder="Age">
+      </mat-form-field>
+    </div>
+
+    <br/><p>{{personObj}}</p>
+    <div>
+      <button mat-raised-button>Submit</button>
+    </div>
+  </form>
+</div>
+
+<div class="mbot-100">
+  <h4>5. Input Text validation</h4>
+  <mat-form-field>
+    <mat-label>Enter Amount</mat-label>
+    <input matInput placeholder="Amount" [formControl]="amount" [errorStateMatcher]="esMatcher"
+      (change)="onAmountChange()">
+    <mat-hint>VNĐ</mat-hint>
+    <span matPrefix>VND&nbsp;</span>
+    <span matSuffix>.000</span>
+    <mat-error *ngIf="amount.hasError('required')">
+      Amount is required.
+    </mat-error>
+    <mat-error *ngIf="amount.hasError('min')">
+      Minimum Amount is 5.
+    </mat-error>
+    <mat-error *ngIf="amount.hasError('max')">
+      Maximum Amount is 200.
+    </mat-error>
+  </mat-form-field>
+
+  <br><br><br>
+  <h4>6. Textarea validation</h4>
+  <mat-form-field>
+    <textarea matInput placeholder="Comment" [formControl]="commentFC2" [errorStateMatcher]="esMatcher"
+      (change)="onCommentChange()">
+    </textarea>
+    <mat-hint align="end">{{commentFC2.value?.length || 0}}/10</mat-hint>
+    <mat-error *ngIf="commentFC2.hasError('required')">
+      Comment is required.
+    </mat-error>
+    <mat-error *ngIf="commentFC2.hasError('maxlength')">
+      Max length is 10.
+    </mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,86 @@
+<p>
+  viewchild works!
+</p>
+<div class="mbot-100">
+  <app-number-parent></app-number-parent>
+  <app-cpcolor-parent></app-cpcolor-parent>
+  <app-cptheme></app-cptheme>
+  <br>
+  <h3>1. ContentChild using Directive</h3>
+  <app-writer>
+    <book bookId="1" bookName="Java 8 Tutorials" *ngIf="latestBook"></book>
+    <book bookId="2" bookName="Learning Angular" *ngIf="!latestBook"></book>
+  </app-writer>
+  <button class="btn btn-primary" (click)="onChangeBook()">Change Book</button>
+
+  <br><br>
+  <h3>2. ContentChildren using Directive</h3>
+  <app-favourite-books>
+    <book bookId="1" bookName="Hibernate 4 Tutorials"></book>
+    <book bookId="2" bookName="Spring Boot Tutorials"></book>
+    <app-favourite-books>
+      <book bookId="3" bookName="Learning JavaScript"></book>
+    </app-favourite-books>
+    <app-favourite-books *ngIf="showAllBook">
+      <book bookId="4" bookName="Thymeleaf Tutorials"></book>
+      <book bookId="5" bookName="Android Tutorials"></book>
+    </app-favourite-books>
+  </app-favourite-books>
+  <button class="btn btn-primary" (click)="onShowAllBooks()">
+    <label class="my-0" *ngIf="!showAllBook">Show More</label>
+    <label class="my-0" *ngIf="showAllBook">Show Less</label>
+  </button>
+
+  <br><br>
+  <h3>3. ContentChild using Component</h3>
+  <app-address2>
+    <app-city2 cityId="1" cityName="Varanasi" *ngIf="homeTown"></app-city2>
+    <app-city2 cityId="2" cityName="Noida" *ngIf="!homeTown"></app-city2>
+  </app-address2>
+  <button class="btn btn-primary" (click)="onChangeCity()">Change City</button>
+
+  <br><br>
+  <h3>4. using Component</h3>
+  <app-favourite-cities>
+    <app-city2 cityId="1" cityName="Noida"></app-city2>
+    <app-city2 cityId="2" cityName="Mumbai"></app-city2>
+    <app-favourite-cities>
+      <app-city2 cityId="3" cityName="Gurugram"></app-city2>
+    </app-favourite-cities>
+    <app-favourite-cities *ngIf="showAllCity">
+      <app-city2 cityId="4" cityName="New Delhi"></app-city2>
+      <app-city2 cityId="5" cityName="Bengaluru"></app-city2>
+    </app-favourite-cities>
+  </app-favourite-cities>
+  <button class="btn btn-primary" (click)="onShowAllCities()">
+    <label class="my-0" *ngIf="!showAllCity">Show More</label>
+    <label class="my-0" *ngIf="showAllCity">Show Less</label>
+  </button>
+
+  <br><br>
+  <h3>5. ContentChild using ElementRef</h3>
+  <app-friend>
+    <div #name *ngIf="bestFriend">Thuong</div>
+    <div #name *ngIf="!bestFriend">Trinh</div>
+  </app-friend>
+  <button class="btn btn-primary" (click)="onChangeFriend()">Change Friend</button>
+
+  <br><br>
+  <h3>6.  using ElementRef</h3>
+  <app-favourite-friends>
+    <div #name>Mohit</div>
+	  <div #name>Anup</div>
+    <div #name *ngIf="showAllFriend">Nilesh</div>
+    <div #name *ngIf="showAllFriend">Sravan</div>
+  </app-favourite-friends>
+  <button class="btn btn-primary" (click)="onShowAllFriends()">
+    <label class="my-0" *ngIf="!showAllFriend">Show More</label>
+    <label class="my-0" *ngIf="showAllFriend">Show Less</label>
+  </button>
+
+  <br><br>
+  <p style="font-size: xx-large;">-----ANGULAR NEW-----</p>
+  <app-vc-demo1></app-vc-demo1>
+  <app-vc-demo2></app-vc-demo2>
+  <app-vc-demo3></app-vc-demo3>
+</div>

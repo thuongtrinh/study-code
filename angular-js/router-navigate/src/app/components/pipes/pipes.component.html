@@ -1,0 +1,176 @@
+<div class="d-flex justify-content-between">
+  <h3 class="font-weight-bold text-danger">Pipe tutorial</h3>
+  <p><a class="badge badge-info p-1" [routerLink]="['custom-async-pipe']"
+     routerLinkActive="custom-async-pipe" >Custom and async pipe</a></p>
+</div>
+<br>
+<div>
+  <h3>Pipe Operator </h3>
+  <b>1. uppercase </b>
+  <p>{{message | uppercase}} </p>
+  <p>{{company.owner.name | uppercase}} </p>
+
+  <b>2. lowercase </b>
+  <p>{{message | lowercase}} </p>
+
+  <b>3. date:'fullDate' </b>
+  <p>{{person.dob | date: 'fullDate'}} </p>
+
+  <b>4. Pipe Chaining </b>
+  <p>{{person.dob | date:'fullDate' | uppercase}} </p>
+
+  <b> 5. json </b>
+  <p>{{company | json}} </p>
+
+  <b> 6. json format </b>
+  <pre> {{company | json}} </pre>
+
+  <b> 7. JsonPipe with Array </b>
+  <pre> {{companyArray | json}} </pre>
+
+  <b> 7'. Using HTML elements such as 'div', we will use JsonPipe as given below.</b>
+  <pre><div [innerHTML]="companyArray | json"></div> </pre>
+</div>
+<div>
+  <h3>Safe Navigation Operator</h3>
+
+  <!--personone is undefined, It will throw error -->
+  <!--p>{{personone.name}} </p>
+  <p>{{personone.dob}} </p-->
+
+  <b>1. </b>
+  <p>{{personone?.name}} </p>
+  <p>{{personone?.dob}} </p>
+
+  <b>2. </b>
+  <p *ngIf="personone">{{personone?.name}} </p>
+  <p *ngIf="personone">{{personone?.dob}} </p>
+
+  <br/>
+  <b>3. </b>
+  <p>{{persontwo?.name}} </p>
+  <p>{{persontwo?.dob | date:'fullDate'}} </p>
+
+  <b>4. </b>
+  <p>{{companyone?.compname}} </p>
+  <p>{{companyone?.owner?.name}} </p>
+  <p>{{companyone?.owner?.dob}} </p>
+
+  <b>5. </b>
+  <p>{{companytwo?.compname}} </p>
+  <p>{{companytwo?.owner?.name}} </p>
+  <p>{{companytwo?.owner?.dob}} </p>
+
+  <b>6. </b>
+  <p>{{companythree?.compname}} </p>
+  <p>{{companythree?.owner?.name}} </p>
+  <p>{{companythree?.owner?.dob}} </p>
+</div>
+<div>
+  <h3>Pipe Date</h3>
+  1. Output of <b>objDate | date :'fullDate'</b> <br/>
+  {{objDate | date :'fullDate'}}
+
+  <br/><br/>2. Output of <b>1478496544151 | date :'short'</b> <br/>
+  {{numDate | date :'short'}}
+
+  <br/><br/>3. Output of <b>strDate | date :'mediumTime'</b> <br/>
+  {{strDate | date :'mediumTime'}}
+
+  <br/><br/>4. Output of <b>strDate | date :'dd:MMM:yyyy hh-mm-ss z'</b> <br/>
+  {{strDate | date :'dd:MMM:yyyy hh-mm-ss z'}}
+
+  <br/><br/>5. Output of <b>objDate | date :'short'</b> <br/>
+  {{objDate | date :'short'}}
+
+  <br/><br/>6. Output of <b>strDate | date :'short'</b> <br/>
+  {{strDate | date :'short'}}
+
+  <br/><br/>7. Output of <b>strDate | date :'medium'</b> <br/>
+  {{ strDate | date :'medium' }}
+
+  <br/><br/>8. Output of <b>strDate | date :'longDate'</b> <br/>
+  {{ strDate | date :'longDate' }}
+
+  <br/><br/>9. Output of <b>strDate | date : 'mediumDate'</b> <br/>
+  {{ strDate | date : 'mediumDate' }}
+
+  <br/><br/>10. Output of <b>strDate | date : 'shortDate'</b> <br/>
+  {{ strDate | date : 'shortDate' }}
+
+  <br/><br/>11. Output of <b>strDate | date : 'mediumTime'</b> <br/>
+  {{ strDate | date : 'mediumTime' }}
+
+  <br/><br/>12. Output of <b>strDate | date : 'shortTime'</b> <br/>
+  {{ strDate | date : 'shortTime' }}
+
+  <br/><br/>13. Output of <b>strDate | date</b> <br/>
+  {{ strDate | date }}
+
+  <br/><br/>14. <b>strDate | date :'hh:mm:ss'</b> <br/>
+  {{ strDate | date :'hh:mm:ss' }}
+
+  <br/><br/>15. <b>strDate | date :'dd-MMM-yyyy'</b> <br/>
+  {{ strDate | date :'dd-MMM-yyyy' }}
+
+  <br/><br/>16. <b>strDate | date :'h:mm'</b> <br/>
+  {{ strDate | date :'h:mm' }}
+
+  <br/><br/>17. <b>strDate | date :'dd:MMM:yyyy hh-mm-ss z'</b> <br/>
+  {{strDate | date :'dd:MMM:yyyy hh-mm-ss z'}}
+
+  <br/><br/>18. <b>strDate | date :'hh:mm, E'</b> <br/>
+  {{strDate | date :'hh:mm, E'}}
+
+  <br/><br/><h3>DecimalPipeUppercase demo</h3>
+  {{address.village | uppercase}}
+  <p [textContent] ="address.district | uppercase" > </p>
+  <input (input) = "setData($event.target.value)"> {{inputData | uppercase}}
+</div>
+<br/>
+<div>
+  <h3>DecimalPipe: num1 = 12.638467846;  num2 = 0.5;</h3>
+  <div>
+    <p><i>num1 | number:</i>&nbsp;&nbsp;&nbsp; {{num1 | number}} </p>
+    <p><i>num1 | number:'3.2-5':</i>&nbsp;&nbsp;&nbsp; {{num1 | number:'3.2-5'}} </p>
+    <p><i>num2 | number:'3.2-5':</i>&nbsp;&nbsp;&nbsp; {{num2 | number:'3.2-5'}} </p>
+    <p><i>num1 | number:'1.3-6':</i>&nbsp;&nbsp;&nbsp; {{num1 | number:'1.3-6'}} </p>
+  </div>
+  <h3>Percent Pipe: num3 = 2.5; num4 = 0.5;</h3>
+  <div>
+     <p><i>num3 | percent:</i>&nbsp;&nbsp;&nbsp; {{num3 | percent}} </p>
+     <p><i>num3 | percent:'2.2-5':</i>&nbsp;&nbsp;&nbsp; {{num3 | percent:'2.2-5'}} </p>
+     <p><i>num4 | percent:'1.3-5':</i>&nbsp;&nbsp;&nbsp; {{num4 | percent:'1.3-5'}} </p>
+     <p><i>num3 | percent:'1.2-3':</i>&nbsp;&nbsp;&nbsp; {{num3 | percent:'1.2-3'}} </p>
+  </div>
+  <h3> Currency Pipe: cur1 = 0.25; cur2 = 10.263782;</h3>
+  <div>
+    <p><i>cur1 | currency:</i>&nbsp;&nbsp;&nbsp; {{cur1 | currency}} </p>
+    <p><i>cur1 | currency:'INR':false:</i>&nbsp;&nbsp;&nbsp; {{cur1 | currency:'INR':false}} </p>
+    <p><i>cur1 | currency:'INR':true:</i>&nbsp;&nbsp;&nbsp; {{cur1 | currency:'INR':true}} </p>
+    <p><i>cur2 | currency:'INR':false:'1.2-4':</i>&nbsp;&nbsp;&nbsp; {{cur2 | currency:'INR':false:'1.2-4'}} </p>
+    <p><i>cur2 | currency:'USD':true:'2.2-4':</i>&nbsp;&nbsp;&nbsp; {{cur2 | currency:'USD':true:'2.2-4'}} </p>
+    <p><i>cur2 | currency:'VND':true:'1.1-5':</i>&nbsp;&nbsp;&nbsp; {{cur2 | currency:'VND':true:'1.1-5'}} </p>
+  </div>
+</div>
+<div class="mbot-100">
+  <h3>Slice Pipe String: spliceMsg = '1234567890'</h3>
+  <p><i>spliceMsg | slice:3:7:</i>&nbsp;&nbsp;&nbsp; {{spliceMsg | slice:3:7}} </p>
+  <p><i>spliceMsg | slice:3:-2:</i>&nbsp;&nbsp;&nbsp; {{spliceMsg | slice:3:-2}} </p>
+  <p><i>spliceMsg | slice:6:</i>&nbsp;&nbsp;&nbsp; {{spliceMsg | slice:6}} </p>
+  <p><i>spliceMsg | slice:-6:</i>&nbsp;&nbsp;&nbsp; {{spliceMsg | slice:-6}} </p>
+
+  <h3>Slice Pipe Array: spliceArray: number[] = [11,22,33,44,55,66,77,88];</h3>
+  <p><i>spliceArray | slice:3:6:</i>&nbsp;&nbsp;&nbsp; {{spliceArray | slice:3:6}} </p>
+  <p><i>spliceArray | slice:3:-4:</i>&nbsp;&nbsp;&nbsp; {{spliceArray | slice:3:-4}} </p>
+  <p><i>spliceArray | slice:5:</i>&nbsp;&nbsp;&nbsp; {{spliceArray | slice:5}} </p>
+  <p><i>spliceArray | slice:-5:</i>&nbsp;&nbsp;&nbsp; {{spliceArray | slice:-5}} </p>
+
+  <h3>*ngFor="let num of spliceArray | slice:2:5"</h3>
+  <ul>
+    <li *ngFor="let num of spliceArray | slice:2:5">
+     {{num}}
+    </li>
+  </ul>
+</div>
+

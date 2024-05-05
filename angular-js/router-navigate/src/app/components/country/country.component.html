@@ -1,0 +1,15 @@
+<h2 class="text-center">Country management</h2>
+
+<div class="d-flex flex-row-reverse">
+  <button [routerLink]="['add']" class="btn btn-primary">Add new</button>
+  <button [routerLink]="['list']" class="btn btn-primary mr-3">Show list</button>
+  <button  (click)="studyObservable()" class="btn btn-primary mr-3">Study Observable</button>
+  <button  (click)="tapAndCatchErrorObservable()" class="btn btn-primary mr-3">Tap</button>
+  <button  (click)="retryObservable()" class="btn btn-primary mr-3">Retry</button>
+</div>
+<div id="myelement" style="border: 1px solid tomato; height: 60px; width: 300px;">
+  Mouse over
+</div>
+<div class="mt-4">
+  <router-outlet></router-outlet>
+</div>

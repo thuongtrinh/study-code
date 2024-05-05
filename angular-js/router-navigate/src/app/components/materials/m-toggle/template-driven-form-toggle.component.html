@@ -1,0 +1,35 @@
+<div class="mbot-300">
+  <h4>4. Person Template-Driven Form</h4>
+  <form #personForm="ngForm" (ngSubmit)="onFormSubmit(personForm)">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Username"
+          name="username"
+          required
+          ngModel
+          #name="ngModel">
+        <mat-error *ngIf="name.hasError('required')">
+          Username is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-slide-toggle name="activateAcc" ngModel
+          required #activateAcc="ngModel">Activate Account</mat-slide-toggle>
+      <div *ngIf="activateAcc.hasError('required') && personForm.submitted" class="error">
+        Confirm Activate Account.
+      </div>
+    </div>
+    <div>
+      <mat-slide-toggle name="premiumUser" ngModel color="primary">Premium User</mat-slide-toggle>
+    </div>
+    <div>
+      <mat-slide-toggle name="autoRenewSub"
+          [ngModel]="true" color="warn">Auto-Renew Subscription</mat-slide-toggle>
+    </div>
+    <br/>
+    <div>
+      <button mat-raised-button>Submit</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,87 @@
+<h3 class="text-center mb-4">Edit Person</h3>
+<div class="offset-md-2 col-md-8" *ngIf="person">
+  <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label">Id</label>
+      <div class="col-md-7">
+          <label class="col-md-3 col-form-label">{{ person.personId }}</label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="name" class="col-md-3 col-form-label">Name</label>
+      <div class="col-md-7">
+          <input class="form-control" formControlName="name">
+          <label [ngClass]="'error'" *ngIf="name.invalid && name.touched">Name required with max 15 characters</label>
+      </div>
+    </div>
+    <div style="color: green">
+      <p *ngIf="usrNameChanges">Name: <b>{{usrNameChanges}}</b> </p>
+      <p *ngIf="usrNameStatus">Name Status: <b>{{usrNameStatus}}</b> </p>
+    </div>
+    <div class="form-group row">
+      <label for="age" class="col-md-3 col-form-label">Age</label>
+      <div class="col-md-7">
+          <input class="form-control" formControlName="age" type="number">
+      </div>
+    </div>
+
+    <div formGroupName="address">
+      <div class="form-group row">
+        <label for="houseNumber" class="col-md-3 col-form-label">House number</label>
+        <div class="col-md-7">
+            <input class="form-control" formControlName="houseNumber" type="number">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="city" class="col-md-3 col-form-label">City</label>
+        <div class="col-md-7">
+            <input class="form-control" formControlName="city">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="country" class="col-md-3 col-form-label">Country</label>
+        <div class="col-md-7">
+            <input class="form-control" formControlName="country">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="mobile" class="col-md-3 col-form-label">Mobile</label>
+      <div class="col-md-7">
+        <input class="form-control" formControlName="mobile">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="gender" class="col-md-3 col-form-label">Gender</label>
+      <div class="col-md-7">
+        <input formControlName="gender" value="male" type="radio" id="maleId">
+        <label for="maleId">&nbsp;Male</label>
+        <input formControlName="gender" value="female" type="radio" id="femaleId" class=ml-4>
+        <label for="femaleId">&nbsp;Female</label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="position" class="col-md-3 col-form-label">Position</label>
+      <div class="col-md-7">
+        <select class="form-control" formControlName="position">
+          <option *ngFor="let p of positions" [ngValue]="p.shortName">{{p.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="married" class="col-md-3 col-form-label">Is married</label>
+      <div class="col-md-7">
+        <input formControlName="married" type="checkbox" id="married">
+        <label for="married">&nbsp;Are you married ?</label>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-md-3"></label>
+      <div class="col-sm-5">
+        <button class="btn btn-primary px-4">Update</button>
+      </div>
+    </div>
+  </form>
+</div>

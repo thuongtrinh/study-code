@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,KAAK,CAAC;EACJ,QAAQ,EAAE,QAAQ;EAClB,MAAM,EAAE,KAAK;EACb,MAAM,EAAE,cAAc;EACtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,IAAI;CACvB;;AAED,AAAA,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;CAEhB",
+    "sources": [
+        "company-comp.component.scss"
+    ],
+    "names": [],
+    "file": "company-comp.component.css"
+}

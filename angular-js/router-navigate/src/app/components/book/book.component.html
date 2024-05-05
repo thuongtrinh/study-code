@@ -1,0 +1,20 @@
+<h2 class="text-center">Book management</h2>
+<nav [ngClass]="'parent-menu'">
+  <ul>
+    <li><a [routerLink]="[{ outlets: { bookPopup: ['book-add'] } }]" routerLinkActive="active">Add Book</a></li>
+    <li><a [routerLink]="[{ outlets: { bookPopup: ['book-detail'] } }]" routerLinkActive="active">Book Details</a></li>
+  </ul>
+</nav>
+
+<div class="offset-md-5 col-md-7 mt-4">
+  <ul [ngClass]="'sub-menu'">
+    <li *ngFor="let book of books | async" [@onOffTrigger]="book.state" (click)="edit(book)">
+      {{book.bookId}}. {{book.name}} - {{book.author}} - {{book.state}}
+    </li>
+  </ul>
+</div>
+<app-book-list></app-book-list>
+<app-writer></app-writer>
+<div class="mt-4">
+  <router-outlet name="bookPopup"></router-outlet>
+</div>

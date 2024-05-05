@@ -1,0 +1,24 @@
+<h3>ngDoCheck() Demo</h3><br>
+
+<table class="table table-striped">
+  <tr *ngFor="let emp of empArray; let i = index">
+     <td>{{emp.id}}</td>
+     <td>{{emp.name}}</td>
+     <td><button class="btn btn-danger" (click)="remove(i)">Remove</button></td>
+     <td><button class="btn btn-success" (click)="update(i)">Update</button></td>
+  </tr>
+</table>
+<button class="btn btn-primary" (click)="add()">Add</button>
+
+<br><br>
+<h4 class="text-danger">Change Logs</h4>
+<table class="table table-striped">
+    <tr>
+      <td><b>Using KeyValueDiffers</b></td>
+      <td><b>Using IterableDiffers</b></td>
+    </tr>
+    <tr>
+      <td><app-emp-kv [empArray]="empArray"></app-emp-kv></td>
+      <td><app-emp-itr [empArray]="empArray"></app-emp-itr></td>
+    </tr>
+</table>

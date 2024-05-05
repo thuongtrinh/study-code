@@ -1,0 +1,52 @@
+<h2 class="text-center">Tutorial about component and lifecycle hook</h2><br/>
+
+<div [ngClass]="'my-theme'">
+  <h3>ABC</h3>
+  <a routerLink="/compLifecycle/person-comp" routerLinkActive="active">
+      Component Styles :host, :host-context, /deep/ Selector, ViewEncapsulation</a>
+  <router-outlet></router-outlet>
+</div>
+<div>
+  <p>
+    <a class="badge badge-info p-1" [routerLink]="['post-banner']"
+      routerLinkActive="custom-async-pipe" >Dynamic Component Loader</a>
+  </p>
+</div>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/change-simplechange']"
+      routerLinkActive="active">OnChanges and SimpleChanges</a>
+  </p>
+</div>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/life-comp']"
+      routerLinkActive="active">OnInit, OnDestroy</a>
+  </p>
+</div>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/after-view-init']"
+      routerLinkActive="active">ngAfterViewInit</a>
+  </p>
+</div>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/keyvalue-differs']"
+      routerLinkActive="active">Angular KeyValueDiffers + Detect Changes in Objects</a>
+  </p>
+</div>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/do-check']"
+      routerLinkActive="active">Angular ngDoCheck()</a>
+  </p>
+</div>
+
+<h3>2. Dependency Injection and Services</h3>
+<div>
+  <p>
+    <a [routerLink]="['/compLifecycle/app-providers']"
+      routerLinkActive="active">Angular Providers</a>
+  </p>
+</div>

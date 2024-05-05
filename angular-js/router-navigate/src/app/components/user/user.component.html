@@ -1,0 +1,155 @@
+<div class="d-flex justify-content-between">
+  <h3 class="font-weight-bold">User Information</h3>
+  <p><a class="badge badge-info p-1" [routerLink]="['user-reactive-form']"
+     routerLinkActive="router-link-active" >Ex User with reactive-form</a></p>
+</div>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="isValidFormSubmitted">
+  <strong>Success!</strong> Form submitted successfully.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form #userForm="ngForm" (ngSubmit)="onSubmitForm(userForm)">
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Name:</label>
+    <div class="col-md-3">
+      <input class="form-control" name="username" [ngModel]="user.username" required usernameExists
+          #username="ngModel" [pattern]="unamePattern">
+    </div>
+    <ng-container *ngIf="username.errors && userForm.submitted && !isValidFormSubmitted">
+      <label *ngIf="username.errors.required" class="form-check-label error">Username is required</label>
+      <label *ngIf="username.errors.pattern" class="form-check-label error">Username not valid with pattern</label>
+      <label *ngIf="username.errors.usernameExists" class="form-check-label error">Username already exist</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Password:</label>
+    <div class="col-md-3">
+      <input class="form-control" name="password" [ngModel]="user.password" required
+        [matchForUsername]="username.value" #password="ngModel" >
+    </div>
+    <ng-container *ngIf="password.errors && userForm.submitted && !isValidFormSubmitted">
+      <label *ngIf="password.errors.required" class="form-check-label error">Password is required</label>
+      <label *ngIf="password.errors.matchForUsername" class="form-check-label error">Password cannot match with username</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Email:</label>
+    <div class="col-md-3">
+      <input class="form-control" name="email" [ngModel]="user.email" email required emailExists
+          #email="ngModel">
+    </div>
+    <ng-container *ngIf="email.errors && userForm.submitted && !isValidFormSubmitted">
+      <label *ngIf="email.errors.required" class="form-check-label error">Email is required</label>
+      <label *ngIf="email.errors.email" class="form-check-label error">Email not valid with pattern</label>
+      <label *ngIf="email.errors.emailExists" class="form-check-label error">Email already exist</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Mobile number:</label>
+    <div class="col-md-3">
+      <input class="form-control" name="mobile" [ngModel]="user.mobile" required mobileExists
+          blackListedMobNum #mobile="ngModel">
+    </div>
+    <ng-container *ngIf="mobile.errors && userForm.submitted && !isValidFormSubmitted">
+      <label *ngIf="mobile.errors.required" class="form-check-label error">Mobile is required</label>
+      <label *ngIf="mobile.errors.mobileExists" class="form-check-label error">Mobile already exist</label>
+      <label *ngIf="mobile.errors.blackListedMobNum" class="form-check-label error">Black listed mobile number</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Select profile:</label>
+    <div class="col-md-3">
+      <select class="form-control" name="profile" [(ngModel)]="user.profile" required
+            [compareWith]="compareProfile" #profile="ngModel" (change)="onProfileChange()">
+        <option [ngValue]="null" disabled>Choose your profile</option>
+        <option *ngFor="let p of allProfiles" [ngValue]="p">{{ p.profileName }}</option>
+      </select>
+    </div>
+    <label *ngIf="profile.invalid && userForm.submitted && !isValidFormSubmitted"
+        [ngClass]="'error'">Profile is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Select technologies:</label>
+    <div class="col-md-3">
+      <select class="form-control" multiple name="selectedTechs" [ngModel]="user.technologies"
+          required #selectedTechs="ngModel" [compareWith]="compareTech">
+        <option *ngFor="let tech of allTechnologies" [ngValue]="tech">{{ tech.techName }}</option>
+      </select>
+    </div>
+    <label *ngIf="selectedTechs.invalid && userForm.submitted && !isValidFormSubmitted"
+        [ngClass]="'error'">Techs is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Gender:</label>
+    <div class="col-md-3">
+      <input type="radio" value="male" name="gender" id="maleId" [ngModel]="user.gender"
+          required #gender="ngModel">
+      <label for="maleId">&nbsp;Male</label>
+      <input type="radio" value="female" name="gender" id="femaleId" [ngModel]="user.gender"
+          required #gender="ngModel" class=ml-4>
+      <label for="femaleId">&nbsp;Female</label>
+    </div>
+    <label *ngIf="gender.invalid && userForm.submitted && !isValidFormSubmitted"
+        [ngClass]="'error'">Gender is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Married:</label>
+    <div class="col-md-3">
+      <input type="checkbox" id="marriedId" name="isMarried" [ngModel]="user.isMarried">
+      <label for="marriedId" class="form-check-label pl-2">Are you married?</label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Number 1:</label>
+    <div class="col-md-3">
+      <input type="number" class="form-control" name="num1" [ngModel]="user.num1" #numberOne="ngModel"
+        required [customMin]="minNum">
+    </div>
+    <ng-container *ngIf="numberOne.errors && userForm.submitted">
+      <label *ngIf="numberOne.errors.required" class="form-check-label error">Enter your number</label>
+      <label *ngIf="numberOne.errors.customMin" class="form-check-label error">Minimum required number is {{minNum}}</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Number 2:</label>
+    <div class="col-md-3">
+      <input type="number" class="form-control" name="num2" [ngModel]="user.num2" #numberTwo="ngModel"
+        required [customMax]="maxNum">
+    </div>
+    <ng-container *ngIf="numberTwo.errors && userForm.submitted">
+      <label *ngIf="numberTwo.errors.required" class="form-check-label error">Enter your number</label>
+      <label *ngIf="numberTwo.errors.customMax" class="form-check-label error">Maximun required number is {{maxNum}}</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Number 3:</label>
+    <div class="col-md-3">
+      <input type="number" class="form-control" name="num3" [ngModel]="user.num3" #numberThree="ngModel"
+        required [customMin]="minNum" [customMax]="maxNum">
+    </div>
+    <ng-container *ngIf="numberThree.errors && userForm.submitted">
+      <label *ngIf="numberThree.errors.required" class="form-check-label error">Enter your number</label>
+      <label *ngIf="numberThree.errors.customMin" class="form-check-label error">Minimun required number is {{minNum}}</label>
+      <label *ngIf="numberThree.errors.customMax" class="form-check-label error">Maximin required number is {{maxNum}}</label>
+    </ng-container>
+  </div>
+
+  <div class="col-md-5 d-flex justify-content-around mb-5">
+    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary" (click)="setDefaultValues()">Reset default</button>
+    <button class="btn btn-primary" (click)="resetForm(userForm)">Reset</button>
+  </div>
+</form>

@@ -1,0 +1,90 @@
+<div class="d-flex justify-content-between mb-4">
+  <h3>User With Reactive Form Works!</h3>
+</div>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmitForm()">
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Name:</label>
+    <div class="col-md-3">
+      <input class="form-control" formControlName="username" >
+    </div>
+    <ng-container *ngIf="username.errors && userForm.dirty">
+      <label *ngIf="username.errors.required" class="col-form-label error">Username is required</label>
+      <label *ngIf="username.errors.pattern" class="col-form-label error">Username not valid  with pattern</label>
+      <label *ngIf="username.errors.usernameExists" class="col-form-label error">Username already exist</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Password:</label>
+    <div class="col-md-3">
+      <input class="form-control" formControlName="password" >
+    </div>
+    <ng-container *ngIf="password.errors && userForm.dirty">
+      <label *ngIf="password.errors.required" class="col-form-label error">Password is required</label>
+      <label *ngIf="password.errors.matchForUsername" class="col-form-label error">Password cannot same with username</label>
+    </ng-container>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Select profile:</label>
+    <div class="col-md-3">
+      <select class="form-control" formControlName="profile"
+        (change)="onProfileChange()">
+        <option [ngValue]="null" disabled>Choose your profile</option>
+        <option *ngFor="let p of allProfiles" [ngValue]="p">{{ p.profileName }}</option>
+      </select>
+    </div>
+    <label *ngIf="profile.invalid && userForm.dirty"
+        [ngClass]="'error'" class="col-form-label">Profile is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Select technologies:</label>
+    <div class="col-md-3">
+      <select class="form-control" multiple formControlName="technologies" [compareWith]="compareTech">
+        <option *ngFor="let tech of allTechnologies" [ngValue]="tech">{{ tech.techName }}</option>
+      </select>
+    </div>
+    <label *ngIf="technologies.invalid && userForm.dirty"
+        [ngClass]="'error'" class="col-form-label">Techs is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Gender:</label>
+    <div class="col-md-3">
+      <input type="radio" value="male" id="maleId" formControlName="gender">
+      <label for="maleId">&nbsp;Male</label>
+      <input type="radio" value="female" id="femaleId" formControlName="gender" class=ml-4>
+      <label for="femaleId">&nbsp;Female</label>
+    </div>
+    <label *ngIf="gender.invalid && userForm.dirty"
+        [ngClass]="'error'" class="col-form-label">Gender is required</label>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Married:</label>
+    <div class="col-md-3">
+      <input type="checkbox" id="marriedId" formControlName="isMarried">
+      <label for="marriedId" class="form-check-label pl-2">Are you married?</label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-md-2">Number:</label>
+    <div class="col-md-3">
+      <input type="number" class="form-control" formControlName="num1">
+    </div>
+    <ng-container *ngIf="num1.errors && userForm.dirty">
+      <label class="form-check-label error" *ngIf="num1.errors.required">Enter your number</label>
+      <label class="form-check-label error" *ngIf="num1.errors.min">Minimun required number is {{minNum}}</label>
+      <label class="form-check-label error" *ngIf="num1.errors.max">Maximum required number is {{maxNum}}</label>
+    </ng-container>
+  </div>
+
+  <div class="col-md-5 d-flex justify-content-around">
+    <button class="btn btn-primary">Submit</button>
+    <button class="btn btn-primary" (click)="setDefaultValues()">Reset default</button>
+    <button class="btn btn-primary" (click)="resetForm()">Reset</button>
+  </div>
+</form>

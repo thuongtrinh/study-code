@@ -1,0 +1,63 @@
+<h3 class="text-center mb-4 text-danger">Create New Team</h3>
+<div class="offset-md-2 col-md-8 border border-dark rounded p-5 bg-white mb-5">
+<div class="d-flex flex-row-reverse">
+  <button class="btn btn-primary" (click)="resetTeamDefault('Java Team')">Load default team</button>
+  <button class="btn btn-primary mr-4" (click)="resetTeamForm()">Reset</button>
+</div>
+
+<form [formGroup]="teamForm" (ngSubmit)="onFormSubmit()">
+  <p [class.mb-0]="isMbottomTN"><b>Team name</b>
+    <input class="form-control" formControlName="teamName"></p>
+  <p *ngIf="teamForm.get('teamName').invalid && (teamForm.get('teamName').dirty ||
+      isValidFormSubmitted != null  && !isValidFormSubmitted) && teamForm.invalid"
+      class="error">Team name is required</p>
+
+  <p [class.mb-0]="isMbottomTM"><b>Team manager</b>
+    <input class="form-control" formControlName="teamManager"></p>
+  <label *ngIf="teamForm.get('teamManager').invalid && (teamForm.get('teamManager').dirty ||
+      isValidFormSubmitted != null  && !isValidFormSubmitted) && teamForm.invalid"
+      class="error">Team manager is required</label>
+
+  <div class="row">
+    <div class="col">
+      <p><b>Department</b></p>
+      <div class="ml-3" formGroupName="department">
+          <p><i>Department head</i> <input class="form-control" formControlName="deptHead"></p>
+          <p><i>Department name</i> <input class="form-control" formControlName="deptName"></p>
+      </div>
+    </div>
+
+    <div class="col">
+      <p><b>Employee in team</b></p>
+      <div formArrayName="employees" class="scroll-class">
+        <div *ngFor="let emp of empFormArray.controls; let idx = index" [formGroupName]="idx"
+            class="ml-3 p-2">
+          <div class="d-flex bd-highlight align-items-center mb-2">
+            <i class="mr-auto bd-highlight">No.{{idx+1}}</i>
+            <button class="btn btn-outline-danger btn-sm bd-highlight" (click)="deleteEmployee(idx)">Delete</button>
+          </div>
+          <p><i>Employee id</i><input class="form-control" formControlName="emplId"></p>
+          <p class="error" *ngIf="empFormArray.controls[idx].get('emplId').errors?.required &&
+              (isValidFormSubmitted != null  && !isValidFormSubmitted) && teamForm.invalid">Employee id is required!</p>
+
+          <p><i>Employee name</i><input class="form-control" formControlName="emplName"></p>
+          <p class="error" *ngIf="empFormArray.controls[idx].get('emplName').errors?.required &&
+              isValidFormSubmitted != null && !isValidFormSubmitted && teamForm.invalid">Employee name is required!</p>
+
+          <p><i>Skill</i>
+            <select class="form-control" formControlName="skill">
+              <option value=null disabled>Select skill</option>
+              <option *ngFor="let skill of allSkills | async" [ngValue]="skill.name">{{ skill.displayName }}</option>
+            </select>
+          </p>
+          <p class="error" *ngIf="empFormArray.controls[idx].get('skill').errors?.required &&
+              isValidFormSubmitted != null && !isValidFormSubmitted && teamForm.invalid">Skill is required!</p>
+        </div>
+      </div>
+      <div class="d-flex flex-row-reverse mt-2">
+        <button class="btn btn-info" (click)="addNewEmployee()">Add new</button>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>

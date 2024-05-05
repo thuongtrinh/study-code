@@ -1,0 +1,31 @@
+<h3 class="text-center">Person List</h3>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>PersonId</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Mobile</th>
+      <th></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons$ | async">
+      <td>{{ person.personId }}</td>
+      <td>
+        <a [routerLink]="['/person/detail', person.personId]"
+            routerLinkActive="router-link-active">{{ person.name }}</a>
+      </td>
+      <td>{{ person.city }}</td>
+      <td>{{ person.mobile }}</td>
+      <td>
+        <button class="btn btn-info" (click)="goToEdit(person)"
+          routerLinkActive="router-link-active">Edit</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="pt-4">
+  <router-outlet></router-outlet>
+</div>

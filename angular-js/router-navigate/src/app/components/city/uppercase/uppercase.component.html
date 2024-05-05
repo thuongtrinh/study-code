@@ -1,0 +1,4 @@
+<div>
+  <input [(ngModel)] ="firstName"/>{{firstName}}<br>
+  <input [ngModel] ="firstName" (ngModelChange) ="toUpper($event)"/>{{firstName}}
+</div>

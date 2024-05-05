@@ -1,0 +1,45 @@
+<div class="mtop-30">
+  <h3 class="text-center">Book List of Promise</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>BookId</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>State</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of promiseBooks | async">
+        <td>{{ book.bookId }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.state }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mtop-30">
+  <h3 class="text-center">Book List of Observable</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>BookId</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>State</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of observableBooks | async">
+        <td>{{ book.bookId }}</td>
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.state }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

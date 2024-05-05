@@ -1,0 +1,17 @@
+<div>
+  <h3>@ViewChildren + Component</h3>
+  <app-writer2 name="Krishna" book="Angular Tutorials"></app-writer2> <br/>
+  <app-writer2 name="Mahesh" book="Java Tutorials"></app-writer2> <br/>
+  <app-writer2 name="Krishna" book="jQuery Tutorials"></app-writer2> <br/>
+  <app-writer2 name="Bramha" book="Hibernate Tutorials" *ngIf="allWritersVisible"></app-writer2> <br/>
+	<app-writer2 name="Vishnu" book="Spring Tutorials" *ngIf="allWritersVisible"></app-writer2>
+</div>
+<button class="btn btn-primary" (click)="onShowAllCities()">
+  <label class="my-0" *ngIf="!allWritersVisible">Show More</label>
+  <label class="my-0" *ngIf="allWritersVisible">Show Less</label>
+</button>
+<div>
+  <h3>@ViewChildren + Component ex2</h3>
+  <app-writer2 name="Thuong" book="Angular 8" #bkWriter></app-writer2> <br/>
+  <app-writer2 name="Tung" book="Java 8" #bkWriter></app-writer2> <br/>
+</div>

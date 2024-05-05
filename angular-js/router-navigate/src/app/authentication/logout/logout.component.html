@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-12 h-100 d-table">
+    <div *ngIf="authService.isUserLoggedIn()" class="d-flex flex-row-reverse pt-1">
+      <button class="btn-sm btn-info ml-2" (click)="changePassword()">Change password</button>
+      <button class="btn-sm btn-secondary ml-2" (click)="logout()">Logout</button>
+      <div class="card card-block  align-self-center p-1">
+        Logged In: {{loggedInUser.username}} | {{loggedInUser.role}}
+      </div>
+    </div>
+  </div>
+</div>

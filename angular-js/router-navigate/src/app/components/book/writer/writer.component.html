@@ -1,0 +1,93 @@
+<div class="mbot-300">
+  <h3>Book Details</h3>
+  <ul>
+    <li *ngFor="let bookDt of obsBookDetails | async" >
+      Id: {{bookDt.id}}, Name: {{bookDt.name}}, Category: {{bookDt.category}}, Year: {{bookDt.year}}
+    </li>
+  </ul>
+
+  <h3>Filter Books</h3>
+  <form [formGroup]="bookDetailForm" (ngSubmit)="onFormSubmit()">
+    Select Category:
+    <select formControlName="category" class="form-control col-md-2 d-inline mr-5">
+      <option *ngFor="let cat of categories" [ngValue]="cat.category">
+        {{ cat.category }}
+      </option>
+    </select>
+    Select Year:
+    <select formControlName="year" class="form-control col-md-2 d-inline">
+      <option *ngFor="let yr of years" [ngValue]="yr.year">
+        {{ yr.year }}
+      </option>
+    </select>
+    <button class="btn btn-primary ml-5">SUBMIT</button>
+  </form>
+  Result:
+  <ul>
+    <li *ngFor="let book of bookDetails" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+    </li>
+  </ul>
+
+  <h3>Favorite Books</h3>
+  <ul>
+    <li *ngFor="let book of favBookDetails" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+    </li>
+  </ul>
+
+  <h3>Favorite Writer Details</h3>
+  <div *ngIf="favWriter">
+    Writer Id: <b>{{favWriter.writerId}}</b>, Writer Name: <b>{{favWriter.writerName}}</b>
+    <ul>
+      <li *ngFor="let book of favWriter.bookDetails" >
+        Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+      </li>
+    </ul>
+  </div>
+
+  <h3>Writer Details</h3>
+  <div *ngIf="writer">
+    Writer Id: <b>{{writer.writerId}}</b>, Writer Name: <b>{{writer.writerName}}</b>
+    <ul>
+      <li *ngFor="let book of writer.bookDetails" >
+        Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+      </li>
+    </ul>
+  </div>
+
+  <br/><b>Favorite Book Name</b>
+  <div *ngIf="favBookName$ | async as bookName">
+    Name: {{bookName}}
+  </div>
+
+  <br/><b>Favorite Book Name with catchError and subscribe</b>
+  <div *ngIf="bookName">
+    Name: {{bookName}}
+  </div>
+
+  <br/><b>My All Favorite Books</b><br/>
+  <ul>
+    <li *ngFor="let book of myAllfavBooks$ | async" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}
+    </li>
+  </ul>
+
+  <br/><b>My All Favorite Books Using subscribe</b><br/>
+  <ul>
+    <li *ngFor="let book of allFavBooks" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}
+    </li>
+  </ul>
+
+  <br/><b>Search Similar Books for Id</b><br/><br/>
+
+  <input [(ngModel)]="bookId" (input)="searchSimilarBooks(bookId)">
+  <ul>
+    <li *ngFor="let book of similarBookDetails$ | async" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}
+    </li>
+  </ul>
+</div>
+
+

@@ -1,0 +1,25 @@
+:host /deep/ h3 {
+  color: yellow;
+  font-style: italic;
+}
+
+:host ::ng-deep p {
+  color: white;
+  font-style: Monospace;
+  font-size: 20px;
+}
+
+// ::ng-deep = /deep/ = >>>   (>>>: only angular 2)
+
+:host {
+  position: absolute;
+  top: 10%;
+  border: 5px solid red;
+  background-color: silver;
+  width: 300px;
+  height: 400px;
+}
+
+.my-theme {
+  font-family: fantasy;
+}

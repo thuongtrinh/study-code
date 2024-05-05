@@ -1,0 +1,26 @@
+<div>
+	<p>
+    Add New Person
+    <input class="form-control col-md-4" [(ngModel)]="name"><br/>
+    <button class="btn btn-primary" type="button" (click)="add()">Add</button>
+  </p>
+</div>
+
+<div *ngFor="let p of persons" [appComp]="p.name">
+  {{p.name}}&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+  <font color="blue">
+    <a href="javascript:void" (click)="remove(p.id)">Remove</a>
+  </font>
+</div>
+
+<div>
+  <br><b>--- Logging ---</b><br>
+  <ng-template ngFor let-log [ngForOf]="allLogs">
+    <ng-template [ngIf]="log.logType==='c'">
+      <br><font color='green'>{{log.message}}</font>
+    </ng-template>
+    <ng-template [ngIf]="log.logType==='r'" style='color: red'>
+			<br><font color='red'>{{log.message}}</font>
+		</ng-template>
+  </ng-template>
+</div>

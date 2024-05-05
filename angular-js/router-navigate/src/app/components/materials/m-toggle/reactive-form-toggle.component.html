@@ -1,0 +1,56 @@
+<div class="mbot-50">
+  <h4>1. Change, dragChange and toggleChange Test</h4>
+  <mat-slide-toggle [formControl]="autoRenew" #mslideToggle (change)="onChange($event)">Change (Drag or Toggle)</mat-slide-toggle>
+
+  <p>
+    1. checked: {{mslideToggle.checked}}<br>
+    2. color: {{mslideToggle.color}}<br>
+    3. required: {{mslideToggle.required}}<br>
+    4. value: {{autoRenew.value}}
+  </p>
+
+  <br/>
+  <mat-slide-toggle [formControl]="enable" #mdragToggle (dragChange)="onDragChange($event)">Drag</mat-slide-toggle>
+  <br/>
+  <mat-slide-toggle [formControl]="activate" #mtoggleChange (toggleChange)="onToggleChange($event)">Toggle</mat-slide-toggle>
+
+  <p>
+    1. dragChange: {{enable.value}}<br>
+    2. toggleChange: {{activate.value}}<br>
+  </p>
+
+  <h4>2. focus() and toggle() Test</h4>
+  <mat-slide-toggle labelPosition="before" #slide>Premium</mat-slide-toggle>
+  <br/><br/>
+  <button mat-raised-button (click)="focusTest()">Focus</button>&nbsp;&nbsp;
+  <button mat-raised-button (click)="toggleTest()">Toggle</button>
+
+  <br/><br/>
+  <h4>3. Person Reactive Form</h4>
+  <form [formGroup]="personForm" (ngSubmit)="onFormSubmit()" #psForm="ngForm">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username">
+        <mat-error *ngIf="username.hasError('required')">
+          Username is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-slide-toggle formControlName="activateAcc">Activate Account</mat-slide-toggle>
+      <mat-error *ngIf="activateAcc.hasError('required') && psForm.submitted">
+        Confirm Activate Account.
+      </mat-error>
+    </div>
+    <div>
+      <mat-slide-toggle formControlName="premiumUser" color="primary">Premium User</mat-slide-toggle>
+    </div>
+    <div>
+      <mat-slide-toggle formControlName="autoRenewSub" color="warn">Auto-Renew Subscription</mat-slide-toggle>
+    </div>
+    <br/>
+    <div>
+      <button mat-raised-button>Submit</button>
+    </div>
+  </form>
+</div>

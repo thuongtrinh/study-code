@@ -1,0 +1,43 @@
+<div class="mbot-300">
+  <h3>III. Template Driven Form with MatCheckbox</h3>
+
+  <p *ngIf="isValidFormSubmitted" [ngClass] = "'success'">
+      Form submitted successfully.
+  </p>
+
+  <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+    <table>
+    <tr>
+      <td>
+        <input matInput placeholder="Enter name" name="uname" [ngModel]="user.userName" required #uname="ngModel">
+        <div *ngIf="uname.invalid && userForm.submitted && !isValidFormSubmitted" [ngClass] = "'error'">
+          Name required.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <mat-checkbox name="married" [ngModel]="user.isMarried" color="primary">Are you married?</mat-checkbox>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-checkbox name="tc" [ngModel]="user.isTCAccepted" required #tc="ngModel">Accept T & C</mat-checkbox>
+      <div *ngIf="tc.invalid && userForm.submitted && !isValidFormSubmitted" [ngClass] = "'error'">
+          Accept T & C.
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="accent" class="ml-4" (click)="setDefaultValues()">Set Default</button>
+        <button mat-raised-button color="warn" class="ml-4" (click)="resetForm(userForm)">Reset</button>
+      </td>
+    </tr>
+    </table>
+  </form>
+
+  <br/>
+  <pre><div [innerHTML]="content | json"></div> </pre>
+</div>

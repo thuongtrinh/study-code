@@ -1,0 +1,11 @@
+<p>
+  <b>Top Favourite Books</b>
+  <ng-template ngFor let-book [ngForOf]="topBooks">
+    <br>{{book.bookId}} - {{book.bookName}}
+  </ng-template>
+
+  <br/><b>All Favorite Books</b>
+	<ng-template ngFor let-book [ngForOf]= "allBooks">
+	   <br/>{{book.bookId}} - {{book.bookName}}
+	</ng-template>
+</p>

@@ -1,0 +1,40 @@
+<div class="mbot-300">
+  <h4>3. Person Template-Driven Form</h4>
+  <form #personForm="ngForm" (ngSubmit)="onFormSubmit(personForm)">
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Name" name="name" required ngModel #name="ngModel">
+        <mat-error *ngIf="name.hasError('required')">
+          Name is required.
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <p>Notification Type *:</p>
+      <mat-radio-group name="notificationType" ngModel required #notificationType="ngModel">
+        <mat-radio-button value="1" color="primary" class="person-radio-button">Email</mat-radio-button>&nbsp;
+        <mat-radio-button value="2" color="accent" class="person-radio-button">Mobile</mat-radio-button>&nbsp;
+        <mat-radio-button value="3" color="warn" class="person-radio-button">Both</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="notificationType.hasError('required') && personForm.submitted" class="error">
+        Notification Type is required.
+      </div>
+    </div>
+
+    <br>
+    <div>
+      <p>Language:</p>
+      <mat-radio-group name="language" ngModel class="person-radio-group">
+        <mat-radio-button class="person-radio-button" *ngFor="let lang of languages" [value]="lang.id">
+          {{lang.name}}&nbsp;&nbsp;&nbsp;
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <br>
+    <div>
+      <button mat-raised-button color="primary">Submit</button>
+    </div>
+  </form>
+</div>

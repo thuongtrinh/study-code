@@ -1,0 +1,9 @@
+<div class="p-3">
+  <h3 class="text-center">Add Book</h3>
+  <p>Enter Name: <input class="form-control" [(ngModel)]="book.name"></p>
+  <p>Enter Author: <input class="form-control" [(ngModel)]="book.author"></p>
+  <div class="d-flex justify-content-around">
+    <button class="btn btn-primary m-2" (click)="addBookWithObservable()">Add</button>
+    <button class="btn btn-primary m-2" (click)="close()">Close</button>
+  </div>
+</div>

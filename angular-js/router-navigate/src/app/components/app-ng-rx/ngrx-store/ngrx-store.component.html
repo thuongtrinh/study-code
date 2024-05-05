@@ -1,0 +1,8 @@
+<button class="btn btn-primary" (click)="showJavaArticlesRX()">Java ArticlesRX</button><br><br>
+<button class="btn btn-primary" (click)="showAngularArticlesRX()">Angular ArticlesRX</button><br><br>
+<button class="btn btn-primary" (click)="showFavoriteArticlesRX()">Favorite ArticlesRX</button><br><br>
+<ul>
+   <li *ngFor="let article of articlesRX | async">
+        {{article.id}} - {{article.title}} - {{article.category}}
+   </li>
+</ul>
