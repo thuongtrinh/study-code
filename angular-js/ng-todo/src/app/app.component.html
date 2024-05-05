@@ -1,0 +1,144 @@
+<progress-bar></progress-bar>
+<br>
+<progress-bar [progress]="currentProgress" [backgroundColor]="backgColor" [progressColor]="progColor"></progress-bar>
+<br>
+<button (click)="increaseProgress()">Increase Progress</button>
+
+<p>----------------------------------------------------------------------</p>
+
+<hello [name]="title"></hello>
+
+<p>----------------------------------------------------------------------</p>
+
+<toggle #toggleComp [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="!isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
+<div *ngIf="showLast">
+    <toggle [(checked)]="isChecked"></toggle>
+</div>
+
+<p>----------------------------------------------------------------------</p>
+
+<br><br>
+<button (click)="toggleComp.toggle()">Toggle</button>
+<br>
+<button #nativeButton>Button native</button>
+<br><br>
+{{name}}<br>
+<input #nameInput type="text" [ngModel]="name" (ngModelChange)="name=$event">
+<br><br>
+<button (click)="showLast = !showLast">Show lastest</button>
+
+<p>----------------------------------------------------------------------</p>
+
+<toggle [(checked)]="isChecked">
+    <h3 class="header">Header 1</h3>
+    <span>Content 1</span>
+</toggle>
+<br>
+<toggle [(checked)]="isChecked">
+    <h3 class="header">Header 2</h3>
+    <label>Content 2</label>
+    <button class="btnSkip">skip</button>
+</toggle>
+<br>
+<toggle [(checked)]="isChecked">
+    <h3 class="header">Header 3</h3>
+    <ng-container ngProjectAs="label">Content 3</ng-container>
+</toggle>
+
+<p>----------------------------------------------------------------------</p>
+
+<div class="card">
+  <div class="card-header">
+    You have selected
+    <ng-container [ngTemplateOutlet]="tmplCounter"></ng-container> items.
+  </div>
+  <div class="card-body">
+    There are ng-container
+    <ng-container [ngTemplateOutlet]="tmplCounter"></ng-container> items was
+    selected.
+  </div>
+  <div class="card-footer">
+    You have selected ng-container
+    <ng-container [ngTemplateOutlet]="tmplCounter"></ng-container> items.
+  </div>
+</div>
+
+<ng-template #tmplCounter>
+  <span class="badge badge-danger">{{ counter }}</span>
+</ng-template>
+
+<ng-template #linkTemplate let-l="link">
+  <!--  let-l (ben trong co the dung $implicit)  -->
+  {{ l }}
+</ng-template>
+<tabs [navs]="navsVal" [linkTmpl]="linkTemplate"></tabs>
+
+<p>---------------------------app-tab-group-------------------------------------------</p>
+
+<app-tab-group>
+    <app-tab-panel title="Tab 1" ngProjectAs="label">content tab 1</app-tab-panel>
+    <app-tab-panel title="Tab 2">content tab 2</app-tab-panel>
+    <app-tab-panel title="Tab 3">content tab 3</app-tab-panel>
+</app-tab-group>
+
+<p>---------------------------app-bs-tab-group-------------------------------------------</p>
+
+<app-bs-tab-group>
+    <app-tab-panel title="Tab 1">content tab 1</app-tab-panel>
+    <app-tab-panel title="Tab 2">content tab 2</app-tab-panel>
+    <app-tab-panel title="Tab 3">content tab 3</app-tab-panel>
+</app-bs-tab-group>
+
+<p>----------------------------------------------------------------------</p>
+
+<app-bs-tab-group>
+    <app-tab-panel title="Tab 1">
+        <ng-template tabContent>
+            content tab one
+            <app-counter></app-counter>
+        </ng-template>
+    </app-tab-panel>
+    <app-tab-panel title="Tab 2">
+        <ng-template tabContent>
+            content tab two
+            <app-counter></app-counter>
+        </ng-template>
+    </app-tab-panel>
+    <app-tab-panel title="Tab 3">
+        <ng-template tabContent>
+            content tab three
+            <app-counter></app-counter>
+        </ng-template>
+    </app-tab-panel>
+</app-bs-tab-group>
+
+<p>----------------------------------------------------------------------</p>
+
+<app-counter></app-counter>
+
+<p>-------------------------Compare ng-container / ng-template---------------------------------------------</p>
+
+<ng-container *ngIf="true">
+    <div>Hello World ng-container!</div>
+  </ng-container>
+
+<div *ngIf="true">
+    <div>Hello World div!</div>
+</div>
+
+<ng-template [ngIf]="true">
+    <div>Hello World ng-template!</div>
+</ng-template>
+
+<ng-template #hello>
+    <span>Hello Worldsss!</span>
+</ng-template>
+<ng-container *ngTemplateOutlet="hello"></ng-container>
+
+<ng-template>
+    <p>Hello World 111!</p>
+</ng-template>
+
+<p>----------------------------------------------------------------------</p>
