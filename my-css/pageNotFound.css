@@ -1,0 +1,88 @@
+body{
+    font-family: 'Merriweather', serif;
+    padding: 0px;
+    margin: 0px;
+    background-image: linear-gradient(to right top, #123862, #1a3960, #213a5e, #263c5b, #2b3d59);
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center
+}
+.superman img{
+    width: 100px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 55%;
+    animation: animationSuperman 6s infinite linear;
+    user-select: none;
+}
+
+@keyframes animationSuperman{
+    0%{
+        left: -150px;
+    }
+    100%{
+        left: 105%;
+    }
+}
+
+@Keyframes animationStar{
+    0%{
+        box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.5);
+    }
+    20%{
+        box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.6);
+    }
+    50%{
+        box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.7);
+    }
+    70%{
+        box-shadow: 0px 3px 20px rgba(255, 255, 255, 0.2);
+    }
+    90%{
+        box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.star{
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    right: 0px;
+    animation: animationStar 1s infinite linear;
+    border-radius: 3px;
+}
+
+.content{
+    position: absolute;
+    top: 20%;
+    color: #fff;
+}
+.content label{
+    font-size: 100px;
+}
+.content .info{
+    font-size: 25px;
+    margin: 30px 0px 20px;
+}
+.content button{
+    padding: 10px;
+    border-radius: 5px;
+    background: tomato;
+    border: 1px solid red;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    outline: none;
+    
+}
+
+.content button:active{
+    transform: translate(-2px,2px);
+}
+.content button:hover{
+    background: rgba(233, 32, 32, 0.719);
+    border: 1px solid rgba(247, 6, 6, 0.986);
+}

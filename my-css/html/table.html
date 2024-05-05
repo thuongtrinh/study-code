@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            /*Nếu bạn muốn gộp nhiều đường viền thành một đường viền, hãy thêm thuộc tính border-collapse*/
+            border-collapse: collapse;
+            /*Để thiết lập khoảng cách giữa các ô trong bảng, bạn sử dụng thuộc tính border-spacing */
+            border-spacing: 15px;
+            background-color: #f1f1c1;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        ul#menu {
+            padding: 0;
+        }
+
+        ul#menu li {
+            display: inline;
+        }
+
+        ul#menu li a {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px 4px 0 0;
+        }
+
+        ul#menu li a:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cotainer">
+        <table style="width:100%">
+            <caption>Thống kê dân số các nước</caption>
+            <tr>
+                <th>Tên quốc gia</th>
+                <th>Dân số</th>
+                <th>Thời điểm thống kê</th>
+            </tr>
+            <tr>
+                <td>Trung Quốc</td>
+                <td>1.355.692.576</td>
+                <td>Tháng 7, 2014</td>
+            </tr>
+            <tr>
+                <td>Ấn Độ</td>
+                <td>1.236.344.631</td>
+                <td>Tháng 7, 2014</td>
+            </tr>
+            <tr>
+                <td>Hoa Kỳ</td>
+                <td>318.892.103</td>
+                <td>Tháng 7, 2014</td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="list">
+        <h2>Danh sách không theo thứ tự được đánh dấu bằng dấu chấm tròn</h2>
+        <ul style="list-style-type:disc">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ul>
+
+        <h2>Danh sách không theo thứ tự được đánh dấu bằng hình tròn</h2>
+        <ul style="list-style-type:circle">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ul>
+
+        <h2>Danh sách không theo thứ tự được đánh dấu bằng hình vuông</h2>
+        <ul style="list-style-type:square">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ul>
+
+        <h2>Bỏ đánh dấu danh sách không theo thứ tự</h2>
+        <ul style="list-style-type:none">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ul>
+
+        <h2>Danh sách Theo Thứ Tự</h2>
+        <ol>
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <h2>Đánh dấu danh sách bằng số</h2>
+        <ol type="1">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <h2>Đánh dấu danh sách bằng chữ hoa</h2>
+        <ol type="A">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <h2>Đánh dấu danh sách bằng chữ thường</h2>
+        <ol type="a">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <h2>Đánh dấu danh sách bằng chữ La Mã hoa</h2>
+        <ol type="I">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <h2>Đánh dấu danh sách bằng chữ La Mã thường</h2>
+        <ol type="i">
+            <li>Cà phê</li>
+            <li>Trà</li>
+            <li>Sữa</li>
+        </ol>
+
+        <p>Thẻ <mark>dl</mark> sử dụng để tạo một danh sách miêu tả.
+            Thẻ <mark>dt</mark> dùng để tạo chủ đề và thẻ <mark>dd</mark> sử dụng để miêu tả về chủ đề đó.
+        </p>
+        <h2>Danh sách miêu tả</h2>
+        <dl>
+            <dt>Cà phê</dt>
+            <dd>- Đồ uống nóng và sẫm màu</dd>
+            <dt>Milk</dt>
+            <dd>- Đồ uống lạnh và màu trắng</dd>
+        </dl>
+
+        <h2>Danh sách lồng nhau</h2>
+        <ul>
+            <li>Cà phê</li>
+            <li>Trà
+                <ul>
+                    <li>Trà đen</li>
+                    <li>Trà xanh</li>
+                </ul>
+            </li>
+            <li>Sữa</li>
+        </ul>
+
+        <h2>Hiển thị danh sách ngang như một menu</h2>
+        <ul id="menu">
+            <li><a href="/html/hoc-html/">Học HTML</a></li>
+            <li><a href="/thu-vien/thu-vien-html/">Thư viện HTML</a></li>
+            <li><a href="/thu-vien/thu-vien-html/thu-vien-su-kien/">Sự kiện HTML</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

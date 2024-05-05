@@ -1,0 +1,215 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    background: rgba(189, 188, 188, 0.329);
+    display: grid;
+    padding: 20px 150px;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    width: 100%;
+}
+
+.left-logo{
+    text-align: center;
+}
+.left-logo img{
+    border: 2px solid tomato;
+    border-radius: 50%;
+    justify-content: center;
+    user-select: none;
+}
+
+.right-logo > div:nth-child(1){
+    font-size: 3rem;
+}
+.right-logo > div:nth-child(2){
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-top: 10px;
+    user-select: none;
+}
+.right-logo > div:nth-child(2) span{
+    text-transform: uppercase;
+    color: rgb(5, 192, 130);
+    user-select: none;
+}
+
+.container{
+    background: rgba(227, 228, 226, 0.185);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    width: 75%;
+}
+
+.box{
+    text-align: center;
+    border: 1px solid rgba(189, 188, 188, 0.329);
+    padding: 10px;
+    width: calc(100%/4);
+    height: 190px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.container .box img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.container .box .name{
+    font-size: 1.2rem;
+    padding: 3px;
+}
+
+.container .box .poisition{
+    color: rgba(43, 43, 43, 0.425);
+    font-size: 0.8rem;
+}
+
+.container .box .social{
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    color: rgba(31, 29, 29, 0.712);
+    font-size: 13px;
+    opacity: 0;
+}
+
+.box:hover{
+    transform: scale(1.02);
+    box-shadow: 1px 2px 10px rgba(31, 30, 30, 0.486);
+    background: #fff;
+}
+
+.box:hover img{
+    animation: rubberBand 1s ease;
+}
+
+.box:hover .social{
+    opacity: 1;
+}
+
+.social > a{
+    color: #000;
+    transition: 0.3s all ease;
+}
+
+.social > a:nth-child(1):hover{
+    color: #4064AD;
+}
+.social > a:nth-child(2):hover{
+    color: #1C9DEB;
+}
+.social > a:nth-child(3):hover{
+    color: #0074b0;
+}
+
+.social > a:hover{
+    transform: rotate(360deg) scale(1.3);
+}
+
+@keyframes rubberBand {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    30% {
+      -webkit-transform: scale3d(1.25, 0.75, 1);
+      transform: scale3d(1.25, 0.75, 1);
+    }
+  
+    40% {
+      -webkit-transform: scale3d(0.75, 1.25, 1);
+      transform: scale3d(0.75, 1.25, 1);
+    }
+  
+    50% {
+      -webkit-transform: scale3d(1.15, 0.85, 1);
+      transform: scale3d(1.15, 0.85, 1);
+    }
+  
+    65% {
+      -webkit-transform: scale3d(0.95, 1.05, 1);
+      transform: scale3d(0.95, 1.05, 1);
+    }
+
+    75% {
+      -webkit-transform: scale3d(1.05, 0.95, 1);
+      transform: scale3d(1.05, 0.95, 1);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+@media (max-width:450px){
+    .logo{
+        grid-template-columns: 220px 1fr !important;
+    }
+    .right-logo{
+        margin-left: -40px !important;
+    }
+}
+
+@media (max-width:580px){
+    .logo{
+        padding: 10px 0px;
+        grid-template-columns: 280px 1fr;
+    }
+    .right-logo{
+        margin-left: -50px;
+        padding-right: 20px;
+    }
+    .left-logo img{
+        width: 120px;
+        height: 120px;
+    }
+    .right-logo > div:nth-child(1){
+        font-size: 1.8rem;
+    }
+    .right-logo > div:nth-child(2){
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:600px){
+    .box{
+        width: calc(100%);
+    }
+}
+@media (min-width:601px){
+    .box{
+        width: calc(100%/2);
+    }
+}
+@media (min-width: 892px){
+    .box{
+        width: calc(100%/3);
+    }
+}
+@media (min-width: 1220px){
+    .box{
+        width: calc(100%/4);
+    }
+}

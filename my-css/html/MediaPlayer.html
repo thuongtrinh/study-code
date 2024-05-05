@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            margin-bottom: 150px;
+        }
+    </style>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 72px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>MEDIAMULTIPLE</h1>
+        <h2>VIDEO</h2>
+        <video width="400" controls>
+            <source src="https://webvn.com/wp-content/uploads/2014/12/mov_bbb.mp4" type="video/mp4">
+            <source src="https://webvn.com/wp-content/uploads/2014/12/mov_bbb.ogg" type="video/ogg">
+            Trình duyệt của bạn không hỗ trợ thẻ video trong HTML5.
+        </video>
+
+        <p>
+            Video được cung cấp từ
+            <a href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+        </p>
+
+        <h2>AUDIO</h2>
+        <audio controls>
+            <source src="/wp-content/uploads/2015/09/bell.ogg" type="audio/ogg">
+            <source src="C:\Users\Admin\Downloads\Music\Mình-là-gì-của-nhau.mp3" type="audio/mpeg">
+            Trình duyệt của bạn không hỗ trợ thẻ audio trong HTML5.
+        </audio>
+
+        <iframe width="320" height="180" src="https://www.youtube.com/embed/YE7VzlLtp-4">
+        </iframe>
+
+        <br><br><br>
+        <iframe width="320" height="180" allowfullscreen
+            src="https://www.youtube.com/embed/aGUQsb31TEw?version=3&loop=1&playlist=aGUQsb31TEw">
+        </iframe>
+
+        <br><br>
+    </div>
+
+    <div>
+        <p>Kéo logo WebVN vào hình chữ nhật bên dưới:</p>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <br>
+        <img id="drag1" src="https://webvn.com/wp-content/uploads/2014/10/wvnlogo.png" draggable="true"
+            ondragstart="drag(event)" width="200" height="72">
+    </div>
+
+    <div>
+        <p>Nhấn vào nút dưới đây để lấy tọa độ của bạn.</p>
+
+        <button onclick="getLocation()">Định vị</button>
+
+        <p id="demo"></p>
+
+        <script>
+            var x = document.getElementById("demo");
+
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    x.innerHTML = "Trình duyệt của bạn không hỗ trợ Geolocation.";
+                }
+            }
+
+            function showPosition(position) {
+                x.innerHTML = "Vĩ độ: " + position.coords.latitude +
+                    "<br>Kinh độ: " + position.coords.longitude;
+            }
+        </script>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+?version=3&loop=1&playlist=
+ -->

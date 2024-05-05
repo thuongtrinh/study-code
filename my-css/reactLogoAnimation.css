@@ -1,0 +1,342 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background: #000;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: hidden;
+}
+
+body div.logo-react:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-animation: animationLogo 8s linear infinite;
+          animation: animationLogo 8s linear infinite;
+}
+
+body div.logo-react:nth-child(1) div {
+  position: absolute;
+}
+
+body div.logo-react:nth-child(1) div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #7cd1f3;
+  -webkit-animation: animationCircle 1s linear infinite;
+          animation: animationCircle 1s linear infinite;
+  -webkit-box-shadow: 0px 0px 15px #7cd1f3;
+          box-shadow: 0px 0px 15px #7cd1f3;
+}
+
+body div.logo-react:nth-child(1) div:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #7cd1f3;
+  border-left: 20px solid #7cd1f3;
+  -webkit-animation: animationRotate-2 1s linear infinite;
+          animation: animationRotate-2 1s linear infinite;
+}
+
+@-webkit-keyframes animationRotate-2 {
+  0% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate-2 {
+  0% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+body div.logo-react:nth-child(1) div:nth-child(3) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #7cd1f3;
+  border-left: 20px solid #7cd1f3;
+  -webkit-animation: animationRotate-3 1s linear infinite;
+          animation: animationRotate-3 1s linear infinite;
+}
+
+@-webkit-keyframes animationRotate-3 {
+  0% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate-3 {
+  0% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+body div.logo-react:nth-child(1) div:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #7cd1f3;
+  border-left: 20px solid #7cd1f3;
+  -webkit-animation: animationRotate-4 1s linear infinite;
+          animation: animationRotate-4 1s linear infinite;
+}
+
+@-webkit-keyframes animationRotate-4 {
+  0% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate-4 {
+  0% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateZ(0deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateZ(360deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateZ(360deg);
+  }
+}
+
+body div.logo-react:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-animation: animationLogo 8s linear infinite;
+          animation: animationLogo 8s linear infinite;
+}
+
+body div.logo-react:nth-child(2) div {
+  position: absolute;
+}
+
+body div.logo-react:nth-child(2) div:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0b83f;
+  -webkit-animation: animationCircle 1s linear infinite;
+          animation: animationCircle 1s linear infinite;
+  -webkit-box-shadow: 0px 0px 15px #f0b83f;
+          box-shadow: 0px 0px 15px #f0b83f;
+}
+
+body div.logo-react:nth-child(2) div:nth-child(2) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #f0b83f;
+  border-left: 20px solid #f0b83f;
+  -webkit-animation: animationRotate2-2 3s linear infinite;
+          animation: animationRotate2-2 3s linear infinite;
+}
+
+@-webkit-keyframes animationRotate2-2 {
+  0% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate2-2 {
+  0% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(240deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(240deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+body div.logo-react:nth-child(2) div:nth-child(3) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #f0b83f;
+  border-left: 20px solid #f0b83f;
+  -webkit-animation: animationRotate2-3 3s linear infinite;
+          animation: animationRotate2-3 3s linear infinite;
+}
+
+@-webkit-keyframes animationRotate2-3 {
+  0% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate2-3 {
+  0% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(360deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+body div.logo-react:nth-child(2) div:nth-child(4) {
+  width: 350px;
+  height: 350px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border-top: 20px solid #f0b83f;
+  border-left: 20px solid #f0b83f;
+  -webkit-animation: animationRotate2-4 3s linear infinite;
+          animation: animationRotate2-4 3s linear infinite;
+}
+
+@-webkit-keyframes animationRotate2-4 {
+  0% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes animationRotate2-4 {
+  0% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(480deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            transform: rotateZ(480deg) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@-webkit-keyframes animationLogo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes animationLogo {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes animationCircle {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0px 0px 20px #f0b83f;
+            box-shadow: 0px 0px 20px #f0b83f;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0px 0px 5px #f0b83f;
+            box-shadow: 0px 0px 5px #f0b83f;
+  }
+}
+
+@keyframes animationCircle {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-box-shadow: 0px 0px 20px #f0b83f;
+            box-shadow: 0px 0px 20px #f0b83f;
+  }
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0px 0px 5px #f0b83f;
+            box-shadow: 0px 0px 5px #f0b83f;
+  }
+}
+/*# sourceMappingURL=reactLogoAnimation.css.map */

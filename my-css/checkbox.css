@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#turn{
+    width: 100px;
+    height: 50px;
+    border-radius: 40px;
+    background: rgb(211, 208, 208);
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid gray;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#turn::before{
+    content: '';
+    width: 48px;
+    height: 46px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0.5px 2px 10px rgb(97, 96, 96);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#turn:checked {
+    transition: 200ms;
+    background: rgb(35, 209, 64);
+}
+
+#turn:checked:before{
+    transition: 200ms;
+    top: 0px;
+    left: 48px;
+}
+

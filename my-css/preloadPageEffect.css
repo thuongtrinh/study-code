@@ -1,0 +1,97 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.load-parent{
+    width: 160px;
+    height: 160px;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    animation: animationRotate 8s infinite linear;
+}
+
+.load-parent > div{
+    animation: animationLoad 2s infinite linear;
+}
+
+.load-parent:nth-child(2) div{
+    border-radius: 50%;
+}
+
+.load-parent > div:nth-child(7){
+    background: #3158FF;
+    animation-delay: 0s;
+}
+.load-parent > div:nth-child(4),
+.load-parent > div:nth-child(8){
+    background: #46AFE8;
+    animation-delay: 0.2s;
+}
+.load-parent > div:nth-child(1),
+.load-parent > div:nth-child(5),
+.load-parent > div:nth-child(9){
+    background: #3BFFE1;
+    animation-delay: 0.4s;
+}
+.load-parent > div:nth-child(2),
+.load-parent > div:nth-child(6){
+    background: #4FE86E;
+    animation-delay: 0.6s;
+}
+.load-parent > div:nth-child(3){
+    background: #A0FF70;
+    animation-delay: 0.8s;
+}
+
+@keyframes animationLoad{
+    0%,100%{
+        transform: scale(0);
+    }
+    20%{
+        transform: scale(1);
+    }
+    80%{
+        transform: scale(1);
+    }
+}
+@keyframes animationRotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    45%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    70%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    95%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+

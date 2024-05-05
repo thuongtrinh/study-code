@@ -1,0 +1,25 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+canvas{
+    background: #000;
+}
+
+#panel-config{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#panel-config div, #panel-config button{
+    margin: 10px;
+}
+
+#panel-config input, #panel-config button{
+    cursor: pointer;
+}

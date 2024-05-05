@@ -1,0 +1,38 @@
+body{
+    padding: 0px;
+}
+
+.container{
+    overflow: hidden;
+}
+
+.list-items{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;transition: 3s all;
+}
+
+.item{
+    background: tomato;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    margin: 10px;
+    
+}
+
+@media(max-width:760px){
+    .list-items{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .item{
+        width: 100%;
+    }
+}
+

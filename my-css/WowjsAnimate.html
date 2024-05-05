@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="WowjsAnimate.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+
+        var arrayColor = ["#051937","#A8EB12", "#7A9DD1","#AB7AD1", "#E5246F", "#205131", "#EDDA83", "#B29CF0"];
+        
+        var arrayAnimation = ["shake","swing","tada","wobble","jello","heartBeat","BouncingEntrances","bounceIn","bounceInDown",
+        "bounceInLeft","bounceInRight","bounceInUp","BouncingExits","bounceOut","bounceOutDown","bounceOutLeft",
+        "bounceOutRight","bounceOutUp","FadingEntrances","fadeIn","fadeInDown","fadeInDownBig","fadeInLeft","fadeInLeftBig",
+        "fadeInRight","fadeInRightBig","fadeInUp","fadeInUpBig","FadingExits","fadeOut","fadeOutDown","fadeOutDownBig",
+        "fadeOutLeft","fadeOutLeftBig","fadeOutRight","fadeOutRightBig","fadeOutUp","fadeOutUpBig","Flippers","flip",
+        "flipInX","flipInY","flipOutX","flipOutY","Lightspeed","lightSpeedIn","lightSpeedOut","RotatingEntrances","rotateIn",
+        "rotateInDownLeft","rotateInDownRight","rotateInUpLeft","rotateInUpRight","RotatingExits","rotateOut",
+        "rotateOutDownLeft","rotateOutDownRight","rotateOutUpLeft","rotateOutUpRight","SlidingEntrances","slideInUp",
+        "slideInDown","slideInLeft","slideInRight","SlidingExits","slideOutUp","slideOutDown","slideOutLeft","slideOutRight",
+        "ZoomEntrances","ZoomIn","ZoomInDown","ZoomInLeft","ZoomInRight","ZoomInUp","ZoomExits","ZoomOut","ZoomOutDown",
+        "ZoomOutLeft","ZoomOutRight","ZoomOutUp","Specials","hinge","jackInTheBox","rollIn","rollOut"];
+
+        document.addEventListener("DOMContentLoaded", function(){
+            var elements = document.querySelectorAll(".item");
+            elements.forEach(function(e, i){
+                e.style.background="linear-gradient(" + arrayColor[Math.floor(Math.random()*arrayColor.length)]
+                + "," + arrayColor[Math.floor(Math.random()*arrayColor.length)] + ")"; 
+                e.style.color="blue";
+                e.style.fontSize="22px";
+               //e.style.visibility="visible";
+                //e.style.animationIterationCount= "infinite";
+                
+
+                if(i > 4){
+                    e.classList.add("wow",arrayAnimation[i], "animated");
+                    //e.setAttribute("data-wow-iteration","infinite");
+                    e.setAttribute("data-wow-delay","1s");
+                    e.setAttribute("data-wow-duration","2");
+                    
+                    e.innerHTML=arrayAnimation[i];
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="list-items">
+        <div class="item wow bounceInUp" data-wow-duration="2s"></div>
+        <div class="item wow flash" data-wow-iteration="3"></div>
+        <div class="item wow bounce" data-wow-delay="3"></div>
+        <div class="item wow pulse" data-wow-offset="500"></div>
+        <div class="item wow rubberBand" data-wow-iteration="infinite"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="list-items">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</div>
+
+</body>
+</html>

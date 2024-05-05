@@ -1,0 +1,48 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    /* background-image: linear-gradient(to right top, #284b7e, #005f8a, #006f75, #007947, #587c09); */
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;    
+    flex-direction: column;
+}
+
+.progress-bar{
+    /* position: relative; */
+}
+
+.progress-bar .line{
+    width: 500px;
+    height: 10px;
+    border-radius: 3px;
+    background: #e8e8e8;
+    position: relative;
+}
+
+.progress-bar .label{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.progress-bar > .line > span{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: tomato;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px 1px tomato;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Số đã đếm được: <output id="result"></output></p>
+    <button onclick="startWorker()">Chạy Worker</button>
+    <button onclick="stopWorker()">Dừng Worker</button>
+    <p><strong>Lưu ý:</strong> Internet Explorer 9 và các phiên bản trở về trước không hỗ trợ Web Worker.</p>
+
+    <script>
+        var w;
+        function startWorker() {
+            if (typeof (Worker) !== "undefined") {
+                if (typeof (w) == "undefined") {
+                    //w = new Worker("./html/htmlAdvance.js");
+
+                    var worker = new Worker(URL.createObjectURL(new Blob(["(" + timedCount.toString() + ")()"], { type: 'text/javascript' })));
+                }
+                w.onmessage = function (event) {
+                    document.getElementById("result").innerHTML = event.data;
+                };
+            } else {
+                document.getElementById("result").innerHTML = "Rất tiếc, trình duyệt của bạn không hỗ trợ Web Worker...";
+            }
+        }
+
+        function stopWorker() {
+            w.terminate();
+            w = undefined;
+        }
+
+        var i = 0;
+
+        function timedCount() {
+            i = i + 1;
+            postMessage(i);
+            setTimeout("timedCount()", 500);
+        }
+        // timedCount();
+    </script>
+</body>
+
+</html>

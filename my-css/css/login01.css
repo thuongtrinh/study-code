@@ -1,0 +1,81 @@
+body{
+    font-family: arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+form{
+    border-radius: 10px;
+    box-shadow: .5px 2px 10px rgba(128, 129, 129);
+    padding: 30px;
+}
+
+form .group-items{
+    position: relative;
+    padding: 10px 0xp;
+    margin: 40px;
+}
+
+form .title{
+    font-size: 2rem;
+    color: #000;
+    text-shadow: 2px 2px 3px rgba(92, 94, 93, 0.329);
+    margin: 50px;
+    user-select: none;
+    font-weight: 400;
+    text-align: center;
+}
+
+form .group-items label{
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    font-weight: 200;
+    color: rgb(190, 187, 187);
+    pointer-events: none;
+}
+
+form .group-items input{
+   border: none;
+   border-bottom: 1.5px solid dodgerblue;
+   padding: 3px;
+   outline: none;
+   width: 250px;
+   font-size: 16px;
+   font-family: monospace, sans-serif;
+}
+
+form input:focus + label, form input:valid + label{
+    top: -25px;
+    left: 0px;
+    font-size: 20px;
+    color: dodgerblue;
+}
+
+form #btn-login{
+    background-color: rgb(99, 118, 221);
+    padding: 10px;
+    font-size: 22px;
+    color: #fff;
+    border: #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form .group-items #forgot{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+

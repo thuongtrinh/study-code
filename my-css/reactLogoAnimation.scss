@@ -1,0 +1,123 @@
+$colorLogo: rgb(124, 209, 243);
+$colorLogo2: rgb(240, 184, 63);
+$widthLogo: 350px;
+$heightLogo: 350px; 
+
+@mixin flexBox($direction, $justifyContent, $alignItem) {
+    display: flex;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+    flex-direction: $direction;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    background: #000;
+    height: 100vh;
+    @include flexBox(row, space-around, center);
+    overflow: hidden;
+    
+    div.logo-react:nth-child(1){
+        width: 400px;
+        height: 400px;
+        background: black;
+        @include flexBox(row, center, center);
+        animation: animationLogo 8s linear infinite;
+
+        div{
+            position: absolute;
+            &:nth-child(1){
+                width: $widthLogo/7;
+                height: $heightLogo/7;
+                border-radius: 50%;
+                background: $colorLogo;
+                animation: animationCircle 1s linear infinite;
+                box-shadow: 0px 0px 15px $colorLogo;
+            }
+    
+            @for $i from 2 through 4 {
+                &:nth-child(#{$i}){
+                    width: $widthLogo;
+                    height: $heightLogo;
+                    background: rgba(0, 0, 0, 0.2);
+                    border-radius: 50%;
+                    border-top: 20px solid $colorLogo;
+                    border-left: 20px solid $colorLogo;
+                    animation: animationRotate-#{$i} 1s linear infinite;
+                }
+
+                @keyframes animationRotate-#{$i}{
+                    0%{
+                        transform: rotateZ(120deg*$i) rotateX(65deg) rotateZ(0deg);
+                    }
+                    100%{
+                        transform: rotateZ(120deg*$i) rotateX(65deg) rotateZ(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    div.logo-react:nth-child(2){
+        width: 400px;
+        height: 400px;
+        background: black;
+        @include flexBox(row, center, center);
+        animation: animationLogo 8s linear infinite;
+
+        div{
+            position: absolute;
+            &:nth-child(1){
+                width: $widthLogo/7;
+                height: $heightLogo/7;
+                border-radius: 50%;
+                background: $colorLogo2;
+                animation: animationCircle 1s linear infinite;
+                box-shadow: 0px 0px 15px $colorLogo2;
+            }
+    
+            @for $i from 2 through 4 {
+                &:nth-child(#{$i}){
+                    width: $widthLogo;
+                    height: $heightLogo;
+                    background: rgba(0, 0, 0, 0.2);
+                    border-radius: 50%;
+                    border-top: 20px solid $colorLogo2;
+                    border-left: 20px solid $colorLogo2;
+                    animation: animationRotate2-#{$i} 3s linear infinite;
+                }
+
+                @keyframes animationRotate2-#{$i}{
+                    0%{
+                        transform: rotateZ(120deg*$i) rotateX(65deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+                    }
+                    100%{
+                        transform: rotateZ(120deg*$i) rotateX(65deg) rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes animationLogo{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes animationCircle{
+        0%,20%,40%,60%,80%,100%{
+            transform: scale(0.9);
+            box-shadow: 0px 0px 20px $colorLogo2;
+        }
+        10%,30%,50%,70%,90%{
+            transform: scale(1);
+            box-shadow: 0px 0px 5px $colorLogo2;
+        }
+    }
+}
+
