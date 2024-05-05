@@ -7,7 +7,9 @@ class PropsValidation extends Component {
         const {number1, number2} = this.props
         return (
             <Fragment>
+                <p>--------------PropsValdidation------------------ </p>
                 <div>{number1} + {number2} = {number1 + number2}</div>
+                <p>-------------------------------- </p>
                 <IPhonePropsValdidation/>
             </Fragment>
         );
