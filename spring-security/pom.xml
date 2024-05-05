@@ -6,9 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<properties>
-		<spring.version>5.2.24.RELEASE</spring.version>
+		<spring.version>5.3.19</spring.version>
 		<spring.security.version>3.2.8.RELEASE</spring.security.version>
-		<hibernate.version>5.3.20.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 	</properties>
 
 	<dependencies>
@@ -125,7 +125,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.3.7</version>
+			<version>42.3.9</version>
 		</dependency>
 
 		<dependency>
