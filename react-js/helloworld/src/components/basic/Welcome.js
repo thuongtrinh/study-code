@@ -22,7 +22,8 @@ class Welcome extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome ! I am a {this.props.name}</h1>
+                <h1>Hello React.js - HelloWorld</h1>
+                <h2>Welcome ! I am a {this.props.name}</h2>
                 <FunctionalComponentWelcome type="functional component"/><hr />
                 <State/><hr />
                 <PropsValidation/><hr />
