@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import ReactHook from "./ReactHook";
+import CounterReducer from "./CounterReducer";
 
 function LoginPage(props) {
   const { isLoggedIn } = props;
@@ -9,7 +10,10 @@ function LoginPage(props) {
   return (
     <div>
       <h1>Login Page, Please log in to continue</h1>
-      <ReactHook/>
+      <ReactHook/><hr/>
+      <h2 style={{color:'red'}}>Kungfutech</h2>
+      <CounterReducer/><hr/>
+
     </div>
   );
 }

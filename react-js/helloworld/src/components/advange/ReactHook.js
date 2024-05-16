@@ -32,7 +32,7 @@ class ReactHook extends Component {
         <RandomNumberComponent/><hr/>
         <RandomNumberNotUseState/><hr/>
         <MoreContentUseState/><hr/>
-        <MyUseContext/><hr/>
+        <MyUseContext/>
       </div>
     );
   }
