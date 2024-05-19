@@ -11,7 +11,7 @@ import MyUseMemoNumber from "./MyUseMemoNumber";
 import CustomHooksUseOnlineStatus from "./CustomHooksUseOnlineStatus";
 import MyUseImperativeHandle from "./MyImperativeHandle";
 
-function LoginPage(props) {
+function Advance(props) {
   const { isLoggedIn } = props;
   if (isLoggedIn) {
     return <Navigate to="/" />;
@@ -35,4 +35,4 @@ function LoginPage(props) {
   );
 }
 
-export default LoginPage;
+export default Advance;
