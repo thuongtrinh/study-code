@@ -16,7 +16,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/password-validator">Create a Password Validator</NavLink>
           </li>
-          <li>Java</li>
+          <li>
+            <NavLink to="/api-get-weather">API request in get Weather</NavLink>
+          </li>
           <li>JavaFX</li>
         </ol>
         <div>

@@ -10,6 +10,7 @@ import IndexEx from "./components/example/IndexEx";
 import SubmissionForm from "./components/example/forms/SubmissionForm";
 import RandomJoke from "./components/example/random-joke/RandomJoke";
 import PasswordValidatorApp from "./components/example/password-validator/PasswordValidatorApp";
+import ApiGetWeather from "./components/example/api-get-weather/ApiGetWeather";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,8 @@ root.render(
           <Route path="submission-form" element={<SubmissionForm />} />
           <Route path="radom-joke" element={<RandomJoke />} />
           <Route path="password-validator" element={<PasswordValidatorApp />} />
+          <Route path="api-get-weather" element={<ApiGetWeather />} />
+
         </Route>
       </Routes>
     </BrowserRouter>
