@@ -8,6 +8,8 @@ import Welcome from "./components/basic/Welcome";
 import Advance from "./components/advange/Advance";
 import IndexEx from "./components/example/IndexEx";
 import SubmissionForm from "./components/example/forms/SubmissionForm";
+import RandomJoke from "./components/example/random-joke/RandomJoke";
+import PasswordValidatorApp from "./components/example/password-validator/PasswordValidatorApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +21,8 @@ root.render(
           <Route path="advance" element={<Advance />} />
           <Route path="example" element={<IndexEx />} />
           <Route path="submission-form" element={<SubmissionForm />} />
+          <Route path="radom-joke" element={<RandomJoke />} />
+          <Route path="password-validator" element={<PasswordValidatorApp />} />
         </Route>
       </Routes>
     </BrowserRouter>

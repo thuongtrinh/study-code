@@ -10,8 +10,12 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/submission-form">Submission Form</NavLink>
           </li>
-          <li>CSS</li>
-          <li>JavaScript</li>
+          <li>
+            <NavLink to="/radom-joke">Random Joke</NavLink>
+          </li>
+          <li>
+            <NavLink to="/password-validator">Create a Password Validator</NavLink>
+          </li>
           <li>Java</li>
           <li>JavaFX</li>
         </ol>
