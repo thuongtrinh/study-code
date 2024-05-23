@@ -19,7 +19,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/api-get-weather">API request in get Weather</NavLink>
           </li>
-          <li>JavaFX</li>
+          <li>
+            <NavLink to="/game-rock-papper-scissor">Create Rock Paper Scissor Game</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />
