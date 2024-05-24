@@ -22,6 +22,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/game-rock-papper-scissor">Create Rock Paper Scissor Game</NavLink>
           </li>
+          <li>
+            <NavLink to="/to-do-list">To Do List</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />

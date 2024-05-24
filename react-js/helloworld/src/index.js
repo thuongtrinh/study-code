@@ -12,6 +12,7 @@ import RandomJoke from "./components/example/random-joke/RandomJoke";
 import PasswordValidatorApp from "./components/example/password-validator/PasswordValidatorApp";
 import ApiGetWeather from "./components/example/api-get-weather/ApiGetWeather";
 import GameRockPaperScissor from "./components/example/game-rock-paper-scissor/GameRockPaperScissor";
+import TodoList from "./components/example/todo-list/TodoList";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -27,6 +28,7 @@ root.render(
           <Route path="password-validator" element={<PasswordValidatorApp />} />
           <Route path="api-get-weather" element={<ApiGetWeather />} />
           <Route path="game-rock-papper-scissor" element={<GameRockPaperScissor />} />
+          <Route path="to-do-list" element={<TodoList />} />
 
         </Route>
       </Routes>
