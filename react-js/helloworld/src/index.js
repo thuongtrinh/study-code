@@ -13,6 +13,7 @@ import PasswordValidatorApp from "./components/example/password-validator/Passwo
 import ApiGetWeather from "./components/example/api-get-weather/ApiGetWeather";
 import GameRockPaperScissor from "./components/example/game-rock-paper-scissor/GameRockPaperScissor";
 import TodoList from "./components/example/todo-list/TodoList";
+import QuizApp from "./components/example/quiz-app/QuizApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +30,7 @@ root.render(
           <Route path="api-get-weather" element={<ApiGetWeather />} />
           <Route path="game-rock-papper-scissor" element={<GameRockPaperScissor />} />
           <Route path="to-do-list" element={<TodoList />} />
+          <Route path="quiz-app" element={<QuizApp />} />
 
         </Route>
       </Routes>
