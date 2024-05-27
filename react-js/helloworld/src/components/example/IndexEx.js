@@ -28,6 +28,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/quiz-app">Create a Quiz App</NavLink>
           </li>
+          <li>
+            <NavLink to="/coin-flipping-app">Create a Coin Flipping App</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />

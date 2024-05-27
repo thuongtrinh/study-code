@@ -14,6 +14,7 @@ import ApiGetWeather from "./components/example/api-get-weather/ApiGetWeather";
 import GameRockPaperScissor from "./components/example/game-rock-paper-scissor/GameRockPaperScissor";
 import TodoList from "./components/example/todo-list/TodoList";
 import QuizApp from "./components/example/quiz-app/QuizApp";
+import CoinFlippingApp from "./components/example/coin-flipping-app/CoinFlippingApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -31,6 +32,7 @@ root.render(
           <Route path="game-rock-papper-scissor" element={<GameRockPaperScissor />} />
           <Route path="to-do-list" element={<TodoList />} />
           <Route path="quiz-app" element={<QuizApp />} />
+          <Route path="coin-flipping-app" element={<CoinFlippingApp />} />
 
         </Route>
       </Routes>
