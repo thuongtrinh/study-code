@@ -34,6 +34,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/color-box-app">Create a Color-Box App</NavLink>
           </li>
+          <li>
+            <NavLink to="/credit-card-validator">Credit Card Number Validator</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />
