@@ -37,6 +37,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/credit-card-validator">Credit Card Number Validator</NavLink>
           </li>
+          <li>
+            <NavLink to="/create-domain-name-finder-app">Domain name finder</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />

@@ -17,6 +17,7 @@ import QuizApp from "./components/example/quiz-app/QuizApp";
 import CoinFlippingApp from "./components/example/coin-flipping-app/CoinFlippingApp";
 import ColorBoxApp from "./components/example/color-box-app/ColorBoxApp";
 import CreditCardValidate from "./components/example/credit-card-validator/CreditCardValidate";
+import DomainFinderApp from "./components/example/domain-name-finder-app/DomainFinderApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -37,6 +38,7 @@ root.render(
           <Route path="coin-flipping-app" element={<CoinFlippingApp />} />
           <Route path="color-box-app" element={<ColorBoxApp />} />
           <Route path="credit-card-validator" element={<CreditCardValidate />} />
+          <Route path="create-domain-name-finder-app" element={<DomainFinderApp />} />
 
         </Route>
       </Routes>
