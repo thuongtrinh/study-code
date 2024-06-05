@@ -40,6 +40,9 @@ class IndexEx extends Component {
           <li>
             <NavLink to="/create-domain-name-finder-app">Domain name finder</NavLink>
           </li>
+          <li>
+            <NavLink to="/lyrics-finder-app">Song Lyrics Finder app</NavLink>
+          </li>
         </ol>
         <div>
           <Outlet />
