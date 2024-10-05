@@ -1,0 +1,19 @@
+<div>
+  <ng-content select=".header"></ng-content>
+</div>
+
+<button
+  type="button"
+  class="btn btn-circle btn-xl"
+  [ngClass]="checked ? 'btn-danger' : 'btn-success'"
+  (click)="checkedChange.emit(!checked)"
+>
+  {{ checked ? "Red" : "Green" }}
+</button>
+
+<div>
+  <ng-content select="span,label"></ng-content>
+</div>
+<div>
+  <ng-content select=".btnSkip"></ng-content>
+</div>

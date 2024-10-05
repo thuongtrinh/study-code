@@ -1,13 +1,17 @@
-import Welcome from "./components/Welcome";
+import React from "react";
+import "./App.css";
+import Header from "./components/header/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <div style={{margin: "10px 0px 5in"}}>
-      <h1>Hello React.js - HelloWorld</h1>
-      <Welcome name="class component"/>
+    <div className="App">
+      <Header />
+      <div className="Content">
+        <Outlet />
+      </div>
     </div>
   );
 }
-
 
 export default App;

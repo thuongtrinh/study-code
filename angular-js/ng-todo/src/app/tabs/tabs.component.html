@@ -1,0 +1,11 @@
+<ul class="nav">
+  <li class="nav-item" *ngFor="let nav of navs">
+    <a class="nav-link active" href="#">
+        <ng-container *ngIf="linkTmpl; else noTmpl">
+            <!-- <ng-container [ngTemplateOutlet]="linkTmpl" [ngTemplateOutletContext]="{link:nav}"></ng-container> -->
+            <ng-container *ngTemplateOutlet="linkTmpl; context: {link:nav}"></ng-container>  <!--  context: {$implicit:nav} -->
+        </ng-container>
+        <ng-template #noTmpl>{{ nav }}</ng-template>
+    </a>
+  </li>
+</ul>

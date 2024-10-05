@@ -1,0 +1,10 @@
+.QuizApp {
+  background-color: #292b2e;
+  color: #ffffff;
+  padding: 100px;
+
+  .app-title {
+    color: #ffffff;
+    margin-top: 2rem;
+  }
+}
