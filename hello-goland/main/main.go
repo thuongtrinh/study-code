@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
-	variable "hello-goland/fundamental"
+	"hello-goland/controlstatement"
+	"hello-goland/fundamental"
 )
 
 func main() {
-	// Here, a is a valid identifier
+	// Here, is a valid identifier
 	var a = "hello world"
 	fmt.Println(a)
 
@@ -15,5 +16,6 @@ func main() {
 	fmt.Printf("Language name: %s", Lname)
 	fmt.Printf("\nChapter name: %s", Cname)
 
-	variable.MainFundamental()
+	fundamental.MainFundamental()
+	controlstatement.MainControlStatement()
 }
