@@ -8,4 +8,7 @@ func MainVariable() {
 	GoVariables()
 	DeclareVariable()
 	ShortVariable()
+	LocalVariable()
+	GlobalVariable()
+	VarKeyword()
 }

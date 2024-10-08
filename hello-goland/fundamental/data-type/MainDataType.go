@@ -10,4 +10,5 @@ func MainDataType() {
 	BooleanType()
 	StringType()
 	StringConcatenation()
+	TypeConversion()
 }

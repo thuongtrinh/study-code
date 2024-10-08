@@ -3,7 +3,7 @@ package data_type
 import "fmt"
 
 func NumberType() {
-	fmt.Println("\n\n===NumberType===")
+	fmt.Println("\n===NumberType===")
 
 	// Using 8-bit unsigned int
 	var X uint8 = 225

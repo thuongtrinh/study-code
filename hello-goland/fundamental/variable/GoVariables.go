@@ -1,6 +1,9 @@
 package variable
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func GoVariables() {
 	fmt.Println("\n===GoVariables var key===")
@@ -17,4 +20,13 @@ func GoVariables() {
 	fmt.Printf("The type of myvariable2 is : %T\n", myvariable2)
 	fmt.Printf("The value of myvariable3 is : %f\n", myvariable3)
 	fmt.Printf("The type of myvariable3 is : %T\n", myvariable3)
+
+	// Go is a strongly typed language as you cannot assign a value of another type to the declared variable.
+	z := 50
+	fmt.Printf("Value of z is %d\n", z)
+	//z := "Golang" ==> reassigning the value of string type it will give an error
+
+	i := math.Max(11, 33)
+	fmt.Printf("Value of i is %f\n", i)
+
 }

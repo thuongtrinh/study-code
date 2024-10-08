@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"hello-goland/constant"
-	data_type "hello-goland/data-type"
-	"hello-goland/variable"
+	variable "hello-goland/fundamental"
 )
 
 func main() {
@@ -17,7 +15,5 @@ func main() {
 	fmt.Printf("Language name: %s", Lname)
 	fmt.Printf("\nChapter name: %s", Cname)
 
-	data_type.MainDataType()
-	variable.MainVariable()
-	constant.MainConstant()
+	variable.MainFundamental()
 }

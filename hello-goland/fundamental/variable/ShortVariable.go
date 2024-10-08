@@ -63,4 +63,14 @@ func ShortVariable() {
 
 	fmt.Printf("\nThe value of myvar003 is : %f\n", myvar003)
 	fmt.Printf("The type of myvar003 is : %T\n", myvar003)
+
+	// taking two variables
+	p, q := 100, 200
+	fmt.Println("\nValue of p ", p, "Value of q ", q)
+
+	// p, q := 500, 600 => this will give an error as there are no new variable on the left-hand side of :=
+
+	pp, q := 456, 200 // here, := is used as an assignment for q as it is already declared. Also, this line will work fine as pp is newly created variable
+
+	fmt.Println("Value of pp ", pp, "Value of q ", q)
 }
