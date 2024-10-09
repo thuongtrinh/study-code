@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"hello-goland/controlstatement"
+	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
 )
 
@@ -18,4 +19,5 @@ func main() {
 
 	fundamental.MainFundamental()
 	controlstatement.MainControlStatement()
+	function_method.MainFunctionAndMethod()
 }
