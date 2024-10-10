@@ -5,6 +5,7 @@ import (
 	"hello-goland/controlstatement"
 	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
+	"hello-goland/structure"
 )
 
 func main() {
@@ -20,4 +21,5 @@ func main() {
 	fundamental.MainFundamental()
 	controlstatement.MainControlStatement()
 	function_method.MainFunctionAndMethod()
+	structure.MainStructure()
 }
