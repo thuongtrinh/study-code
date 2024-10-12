@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	array_slice "hello-goland/array-slice"
 	"hello-goland/controlstatement"
 	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
@@ -22,4 +23,5 @@ func main() {
 	controlstatement.MainControlStatement()
 	function_method.MainFunctionAndMethod()
 	structure.MainStructure()
+	array_slice.MainArrayAndSlice()
 }
