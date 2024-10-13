@@ -11,5 +11,11 @@ func MainArrayAndSlice() {
 	arrays.ArrayInGo()
 	arrays.CopyingArray()
 	slices.SliceInGo()
-	slices.SliceCompositeLiteral()
+	slices.SliceCompositeLiteralAndCopying()
+	slices.PassingSliceFunction()
+	slices.CompareTwoSlices()
+	slices.CheckEqualitySlice()
+	slices.SortSliceInts()
+	slices.TrimSliceByte()
+	slices.SplitSlice()
 }
