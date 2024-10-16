@@ -6,6 +6,7 @@ import (
 	"hello-goland/controlstatement"
 	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
+	"hello-goland/pointers"
 	"hello-goland/strings"
 	"hello-goland/structure"
 )
@@ -26,4 +27,5 @@ func main() {
 	structure.MainStructure()
 	array_slice.MainArrayAndSlice()
 	strings.MainString()
+	pointers.MainPointer()
 }
