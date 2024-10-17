@@ -6,6 +6,7 @@ import (
 	"hello-goland/controlstatement"
 	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
+	"hello-goland/interfaces"
 	"hello-goland/structure"
 )
 
@@ -24,4 +25,5 @@ func main() {
 	function_method.MainFunctionAndMethod()
 	structure.MainStructure()
 	array_slice.MainArrayAndSlice()
+	interfaces.MainInterface()
 }
