@@ -9,4 +9,8 @@ func MainConcurrency() {
 	AnonymousGoroutine()
 	SelectStatement()
 	SelectStatementMultipleCases()
+	MultipleGoroutines()
+	Channels()
+	ChannelClose()
+	ChannelImportantPoints()
 }
