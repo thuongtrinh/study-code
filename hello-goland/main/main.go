@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	array_slice "hello-goland/array-slice"
+	"hello-goland/concurrency"
 	"hello-goland/controlstatement"
 	function_method "hello-goland/function-method"
 	"hello-goland/fundamental"
+	"hello-goland/interfaces"
 	"hello-goland/pointers"
 	"hello-goland/strings"
-	"hello-goland/interfaces"
 	"hello-goland/structure"
 )
 
@@ -30,4 +31,5 @@ func main() {
 	strings.MainString()
 	pointers.MainPointer()
 	interfaces.MainInterface()
+	concurrency.MainConcurrency()
 }
