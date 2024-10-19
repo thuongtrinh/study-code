@@ -8,4 +8,5 @@ func MainConstant() {
 	CompareString()
 	BooleanConstant()
 	MultipleConstant()
+	IotaConstant()
 }
