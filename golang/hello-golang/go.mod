@@ -1,3 +1,3 @@
-module hello-goland
+module hello-golang
 
 go 1.22
