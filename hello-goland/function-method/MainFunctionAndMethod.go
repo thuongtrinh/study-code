@@ -14,6 +14,7 @@ func MainFunctionAndMethod() {
 	functions.InitFunction()
 	functions.FunctionArgument()
 	functions.ReturningMultipleValues()
+	functions.FunctionConstructor()
 	methods.DeferKeyword()
 	methods.MultipleDefer()
 	methods.MethodStruct()

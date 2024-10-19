@@ -7,8 +7,9 @@ func MainDecision() {
 
 	GoDecision()
 	LoopGo()
-	//InfiniteLoop()
+	InfiniteLoop()
 	LoopControl()
 	SwitchStatement()
+	SwitchFallthrough()
 	SelectAndDeadlock()
 }

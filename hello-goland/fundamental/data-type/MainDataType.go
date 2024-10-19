@@ -11,4 +11,5 @@ func MainDataType() {
 	StringType()
 	StringConcatenation()
 	TypeConversion()
+	MapType()
 }
