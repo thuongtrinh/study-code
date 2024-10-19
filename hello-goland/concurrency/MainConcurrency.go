@@ -13,4 +13,5 @@ func MainConcurrency() {
 	Channels()
 	ChannelClose()
 	ChannelImportantPoints()
+	UnidirectionalChannel()
 }
