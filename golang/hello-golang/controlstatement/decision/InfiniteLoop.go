@@ -6,8 +6,9 @@ func InfiniteLoop() {
 	fmt.Println("\n===InfiniteLoop===")
 
 	// Infinite loop
-	for {
-		fmt.Printf("InfiniteLoop\n")
-	}
-
+	/*
+		for {
+			fmt.Printf("InfiniteLoop\n")
+		}
+	*/
 }

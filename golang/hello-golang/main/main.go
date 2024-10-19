@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	array_slice "hello-goland/array-slice"
-	"hello-goland/concurrency"
-	"hello-goland/controlstatement"
-	function_method "hello-goland/function-method"
-	"hello-goland/fundamental"
-	"hello-goland/interfaces"
-	"hello-goland/pointers"
-	"hello-goland/strings"
-	"hello-goland/structure"
+	array_slice "hello-golang/array-slice"
+	"hello-golang/concurrency"
+	"hello-golang/controlstatement"
+	function_method "hello-golang/function-method"
+	"hello-golang/fundamental"
+	"hello-golang/interfaces"
+	"hello-golang/pointers"
+	"hello-golang/strings"
+	"hello-golang/structure"
 )
 
 func main() {

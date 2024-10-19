@@ -2,8 +2,8 @@ package function_method
 
 import (
 	"fmt"
-	"hello-goland/function-method/functions"
-	"hello-goland/function-method/methods"
+	"hello-golang/function-method/functions"
+	"hello-golang/function-method/methods"
 )
 
 func MainFunctionAndMethod() {

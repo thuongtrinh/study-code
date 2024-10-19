@@ -2,7 +2,7 @@ package controlstatement
 
 import (
 	"fmt"
-	"hello-goland/controlstatement/decision"
+	"hello-golang/controlstatement/decision"
 )
 
 func MainControlStatement() {

@@ -2,8 +2,8 @@ package array_slice
 
 import (
 	"fmt"
-	"hello-goland/array-slice/arrays"
-	"hello-goland/array-slice/slices"
+	"hello-golang/array-slice/arrays"
+	"hello-golang/array-slice/slices"
 )
 
 func MainArrayAndSlice() {
