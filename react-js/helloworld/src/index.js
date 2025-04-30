@@ -19,6 +19,8 @@ import ColorBoxApp from "./components/example/color-box-app/ColorBoxApp";
 import CreditCardValidate from "./components/example/credit-card-validator/CreditCardValidate";
 import DomainFinderApp from "./components/example/domain-name-finder-app/DomainFinderApp";
 import LyricsFinderApp from "./components/example/lyrics-finder/LyricsFinderApp";
+import ToDoApp from "./components/redux-examples/todos/ToDoApp";
+import ReduxApp from "./components/redux-examples/ReduxApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +31,8 @@ root.render(
           <Route path="welcome" element={<Welcome />} />
           <Route path="advance" element={<Advance />} />
           <Route path="example" element={<IndexEx />} />
+          <Route path="redux" element={<ReduxApp />} />
+          <Route path="/redux/todos" element={<ToDoApp />} />
           <Route path="submission-form" element={<SubmissionForm />} />
           <Route path="radom-joke" element={<RandomJoke />} />
           <Route path="password-validator" element={<PasswordValidatorApp />} />
@@ -41,7 +45,6 @@ root.render(
           <Route path="credit-card-validator" element={<CreditCardValidate />} />
           <Route path="create-domain-name-finder-app" element={<DomainFinderApp />} />
           <Route path="lyrics-finder-app" element={<LyricsFinderApp />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
