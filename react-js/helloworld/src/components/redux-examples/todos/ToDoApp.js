@@ -12,6 +12,7 @@ const ToDoApp = () => {
     <>
       <Provider store={store}>
         <h2>Todo App</h2>
+        <hr />
         <br />
         <AddTodo />
         <TodoList />

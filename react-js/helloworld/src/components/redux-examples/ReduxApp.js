@@ -8,6 +8,9 @@ export default function ReduxApp() {
         <li>
           <NavLink to="/redux/todos">Todo App</NavLink>
         </li>
+        <li>
+          <NavLink to="/redux/shopping-cart">ShoppingCart App</NavLink>
+        </li>
       </ol>
     </>
   );
