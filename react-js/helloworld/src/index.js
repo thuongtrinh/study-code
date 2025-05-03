@@ -22,6 +22,7 @@ import LyricsFinderApp from "./components/example/lyrics-finder/LyricsFinderApp"
 import ToDoApp from "./components/redux-examples/todos/ToDoApp";
 import ReduxApp from "./components/redux-examples/ReduxApp";
 import ShoppingCart from "./components/redux-examples/shopping-cart/ShoppingCartApp";
+import AsyncApp from "./components/redux-examples/async/AsyncApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +36,7 @@ root.render(
           <Route path="redux" element={<ReduxApp />} />
           <Route path="/redux/todos" element={<ToDoApp />} />
           <Route path="/redux/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/redux/async" element={<AsyncApp />} />
           <Route path="submission-form" element={<SubmissionForm />} />
           <Route path="radom-joke" element={<RandomJoke />} />
           <Route path="password-validator" element={<PasswordValidatorApp />} />
