@@ -24,6 +24,7 @@ import ReduxApp from "./components/redux-examples/ReduxApp";
 import ShoppingCart from "./components/redux-examples/shopping-cart/ShoppingCartApp";
 import AsyncApp from "./components/redux-examples/async/AsyncApp";
 import CounterApp from "./components/redux-examples/counter/CounterApp";
+import TreeViewApp from "./components/redux-examples/tree-view/TreeViewApp";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -39,6 +40,7 @@ root.render(
           <Route path="/redux/shopping-cart" element={<ShoppingCart />} />
           <Route path="/redux/async" element={<AsyncApp />} />
           <Route path="/redux/counter" element={<CounterApp />} />
+          <Route path="/redux/tree-view" element={<TreeViewApp />} />
           <Route path="submission-form" element={<SubmissionForm />} />
           <Route path="radom-joke" element={<RandomJoke />} />
           <Route path="password-validator" element={<PasswordValidatorApp />} />
