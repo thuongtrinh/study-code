@@ -20,6 +20,9 @@ export default function ReduxApp() {
         <li>
           <NavLink to="/redux/tree-view">Tree View App</NavLink>
         </li>
+        <li>
+          <NavLink to="/redux/real-world">Real World App</NavLink>
+        </li>
       </ol>
     </>
   );
