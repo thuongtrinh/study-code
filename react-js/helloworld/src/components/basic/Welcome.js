@@ -39,7 +39,7 @@ class Welcome extends Component {
                 <PropsValidation/><hr />
                 <StateCountDown/><hr />
                 <ComponentLifeCycle/><hr />
-                <EventShowHidden/>
+                <EventShowHidden/><hr />
                 <EventMouseClick/><hr />
                 <FormSubmit/><hr />
                 <RenderCondition/><hr />
@@ -64,7 +64,6 @@ class Welcome extends Component {
                 <StateCounterListWithChangeArray/><hr/>
                 <StateInsertArray/><hr/>
                 <StateCounter/><hr/>
-
             </div>
         );
     }

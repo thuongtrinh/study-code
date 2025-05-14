@@ -23,6 +23,9 @@ export default function ReduxApp() {
         <li>
           <NavLink to="/redux/real-world">Real World App</NavLink>
         </li>
+        <li>
+          <NavLink to="/redux/rtk-demo">Redux Toolkit App</NavLink>
+        </li>
       </ol>
     </>
   );

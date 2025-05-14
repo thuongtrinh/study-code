@@ -39,7 +39,7 @@ class EventMouseClick extends Component {
         <textarea onChange={this.changeText.bind(this)}></textarea>
         <p>textarea content: {this.state.textareaContent}</p>
         <p>------------------------------</p>
-        <h3 onMouseOver={() => this.moveMouseOver()}>Move mouse this text</h3>
+        <h3 style={{background: "gray", color: "yellow"}} onMouseOver={() => this.moveMouseOver()}>Move mouse this text</h3>
         <p>moverOver: {this.state.moveOver}</p>
       </div>
     );
