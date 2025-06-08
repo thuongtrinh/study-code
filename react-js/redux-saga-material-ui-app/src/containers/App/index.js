@@ -4,6 +4,7 @@ import { ThemeProvider } from "@mui/material";
 import customTheme from "../../commons/Theme";
 import configureStore from "../../redux/configureStore";
 import { Provider } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 const store = configureStore();
 
@@ -13,6 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <ThemeProvider theme={customTheme}>
           <TaskBoard />
+          <ToastContainer />
         </ThemeProvider>
       </Provider>
     );

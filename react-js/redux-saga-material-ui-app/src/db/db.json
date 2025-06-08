@@ -1,0 +1,52 @@
+{
+  "tasks": [
+    {
+      "title": "Learning reactjs",
+      "description": "Redux form. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 2,
+      "id": 1
+    },
+    {
+      "title": "Learning SASS",
+      "description": "SASS. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 1,
+      "id": 2
+    },
+    {
+      "title": "Learning Java",
+      "description": "OOP. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 0,
+      "id": 3
+    },
+    {
+      "title": "Learning english",
+      "description": "English. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 1,
+      "id": 4
+    },
+    {
+      "title": "Play game",
+      "description": "With my friend. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 0,
+      "id": 5
+    },
+    {
+      "title": "Learning Java",
+      "description": "Java. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 3,
+      "id": 6
+    },
+    {
+      "title": "Play game",
+      "description": "FIFA. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 3,
+      "id": 7
+    },
+    {
+      "title": "Golang",
+      "description": "Golang. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      "status": 0,
+      "id": 8
+    }
+  ]
+}

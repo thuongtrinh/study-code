@@ -8,16 +8,16 @@ import Icon from "@mui/material/Icon";
 
 class TaskItem extends Component {
   render() {
+    const { task } = this.props;
     return (
       <>
-        <Card sx={{ margin: 2 }}>
+        <Card key={task.id} sx={{ margin: 2 }}>
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              Lizard
+              {task.title}
             </Typography>
             <Typography variant="body2">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              {task.description}
             </Typography>
           </CardContent>
           <CardActions sx={{ justifyContent: "flex-end" }}>
