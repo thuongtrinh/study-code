@@ -4,49 +4,73 @@
       "title": "Learning reactjs",
       "description": "Redux form. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 2,
-      "id": 1
+      "id": "1"
     },
     {
       "title": "Learning SASS",
       "description": "SASS. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 1,
-      "id": 2
+      "id": "2"
     },
     {
       "title": "Learning Java",
       "description": "OOP. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 0,
-      "id": 3
+      "id": "3"
     },
     {
       "title": "Learning english",
       "description": "English. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 1,
-      "id": 4
+      "id": "4"
     },
     {
       "title": "Play game",
       "description": "With my friend. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
-      "status": 0,
-      "id": 5
+      "status": 2,
+      "id": "5"
     },
     {
       "title": "Learning Java",
       "description": "Java. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 3,
-      "id": 6
+      "id": "6"
     },
     {
       "title": "Play game",
       "description": "FIFA. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 3,
-      "id": 7
+      "id": "7"
     },
     {
       "title": "Golang",
       "description": "Golang. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       "status": 0,
-      "id": 8
+      "id": "8"
+    },
+    {
+      "title": "Python",
+      "description": "Python. abc",
+      "status": 2,
+      "id": "c0a5"
+    },
+    {
+      "id": "a52c",
+      "title": "Angular",
+      "description": "Angular. Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.\n",
+      "status": 0
+    },
+    {
+      "title": "Data Analyst",
+      "description": "Data Analyst ",
+      "status": 3,
+      "id": "671a"
+    },
+    {
+      "title": "NodeJs",
+      "description": "NodeJs",
+      "status": 2,
+      "id": "f5df"
     }
   ]
 }

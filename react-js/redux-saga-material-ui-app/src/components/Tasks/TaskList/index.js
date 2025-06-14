@@ -5,10 +5,11 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import TaskItem from "../TaskItem/index";
 import { STATUSES } from "../../../constants";
+import PropTypes from "prop-types";
 
 class TaskList extends Component {
   render() {
-    const { tasks, status } = this.props;
+    const { tasks, status, onClickEdit, onClickDelete } = this.props;
     let statusLabel = STATUSES.filter((statusObj) => {
       return statusObj.value === status.value;
     }).map((data) => data.label);
@@ -28,12 +29,27 @@ class TaskList extends Component {
             </Toolbar>
           </AppBar>
           {tasks.map((task) => {
-            return <TaskItem task={task} status={status} key={task.id} />;
+            return (
+              <TaskItem
+                task={task}
+                status={status}
+                key={task.id}
+                onClickEdit={() => onClickEdit(task)}
+                onClickDelete={() => onClickDelete(task)}
+              />
+            );
           })}
         </Grid>
       </>
     );
   }
 }
+
+TaskList.propTypes = {
+  tasks: PropTypes.array,
+  status: PropTypes.object,
+  onClickEdit: PropTypes.func,
+  onClickDelete: PropTypes.func,
+};
 
 export default TaskList;
