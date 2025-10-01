@@ -1,0 +1,42 @@
+.admin-container {
+  display: flex;
+
+  .admin-sidebar {
+    .pro-sidebar {
+      height: 100vh;
+    }
+  }
+}
+
+.admin-content {
+  width: 100%;
+  .admin-header {
+    height: 40px;
+    border: 1px solid green;
+    line-height: 30px;
+
+    .icon-fabars {
+      cursor: pointer;
+    }
+  }
+  .admin-main {
+    min-height: 200px;
+  }
+}
+
+.manage-use-container {
+  padding: 10px 50px;
+  .title {
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+
+  .user-content {
+    .btn-create-user {
+      margin-bottom: 20px;
+    }
+  }
+}
