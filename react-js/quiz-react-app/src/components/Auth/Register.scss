@@ -1,0 +1,88 @@
+.register-container {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+
+  .auth-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 38px;
+    margin: 6px 0 4px;
+  }
+
+  .field {
+    text-align: left;
+    margin-bottom: 14px;
+  }
+
+  .field-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .field input::placeholder {
+    color: #a3a3a3;
+  }
+
+  .field-required {
+    color: red;
+  }
+
+  .link {
+    color: #374151;
+    text-decoration: underline;
+    font-size: 0.92rem;
+  }
+
+  .btn {
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.02s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.99);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .back-home {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 520px) {
+    .brand {
+      font-size: 34px;
+    }
+  }
+}

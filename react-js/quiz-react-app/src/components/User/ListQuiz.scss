@@ -1,0 +1,10 @@
+.list-quiz-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 150px;
+  gap: 50px;
+
+  .card {
+    width: 30rem;
+  }
+}

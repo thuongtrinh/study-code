@@ -1,0 +1,58 @@
+export const productsData = [
+  {
+    id: "0",
+    imagepath: "assets/img/product1.jpg",
+    productTitle: "BLACK SHIRT",
+    price: "8.5",
+    alt: "Black t - shirt",
+  },
+  {
+    id: "1",
+    imagepath: "assets/img/product2.jpg",
+    productTitle: "EARBUDS",
+    price: "95",
+    alt: "An in - ear bluetooth earbud case in black",
+  },
+  {
+    id: "2",
+    imagepath: "assets/img/product3.jpg",
+    productTitle: "PARKA",
+    price: "49",
+    alt: "The hooded jacket with a fur collar",
+  },
+  {
+    id: "3",
+    imagepath: "assets/img/product4.jpg",
+    productTitle: "METAL BOTTLE",
+    price: "24.5",
+    alt: "A blue, plastic bottle",
+  },
+  {
+    id: "4",
+    imagepath: "assets/img/product5.jpg",
+    productTitle: "BLACK HAT",
+    price: "12",
+    alt: "A black baseball cap",
+  },
+  {
+    id: "5",
+    imagepath: "assets/img/product6.jpg",
+    productTitle: "BACKPACK",
+    price: "64",
+    alt: "Green backpack with black straps",
+  },
+  {
+    id: "6",
+    imagepath: "assets/img/product7.jpg",
+    productTitle: "SNEAKERS",
+    price: "79.5",
+    alt: "Black sneakers with low top",
+  },
+  {
+    id: "7",
+    imagepath: "assets/img/product8.jpg",
+    productTitle: "SUNGLASSES",
+    price: "29.5",
+    alt: "A pair of silver sunglasses with grey lens and a metal frame",
+  },
+];

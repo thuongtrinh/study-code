@@ -1,0 +1,145 @@
+.login-container {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+
+  .auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+
+  .brand {
+    font-weight: 700;
+    font-size: 38px;
+    margin: 6px 0 4px;
+  }
+
+  .subtitle {
+    color: var(--muted);
+    margin: 0 0 14px;
+    font-size: 0.98rem;
+  }
+
+  .field {
+    text-align: left;
+    margin-bottom: 14px;
+  }
+
+  .field-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+
+  .field input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .field input::placeholder {
+    color: #a3a3a3;
+  }
+
+  .forgot {
+    text-align: left;
+    margin: 6px 0 12px;
+  }
+
+  .link {
+    color: #374151;
+    text-decoration: underline;
+    font-size: 0.92rem;
+  }
+
+  .btn {
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: transform 0.02s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.99);
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .btn-outline {
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    color: #374151;
+    width: 100%;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .btn-google {
+    /* Google style mimic */
+    border-color: #e6eaf4;
+    color: #374151;
+    background: #fff;
+  }
+  .btn-microsoft {
+    border-color: #e6e7eb;
+    color: #374151;
+    background: #fff;
+    margin-top: 10px;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem;
+    color: var(--muted);
+    margin: 18px 0;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: "";
+    height: 1px;
+    background: #e5e7eb;
+    flex: 1;
+  }
+  .divider span {
+    font-size: 0.95rem;
+  }
+
+  .sso {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 520px) {
+    .brand {
+      font-size: 34px;
+    }
+  }
+}

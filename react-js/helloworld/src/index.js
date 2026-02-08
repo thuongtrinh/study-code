@@ -19,6 +19,14 @@ import ColorBoxApp from "./components/example/color-box-app/ColorBoxApp";
 import CreditCardValidate from "./components/example/credit-card-validator/CreditCardValidate";
 import DomainFinderApp from "./components/example/domain-name-finder-app/DomainFinderApp";
 import LyricsFinderApp from "./components/example/lyrics-finder/LyricsFinderApp";
+import ToDoApp from "./components/redux-examples/todos/ToDoApp";
+import ReduxApp from "./components/redux-examples/ReduxApp";
+import ShoppingCart from "./components/redux-examples/shopping-cart/ShoppingCartApp";
+import AsyncApp from "./components/redux-examples/async/AsyncApp";
+import CounterApp from "./components/redux-examples/counter/CounterApp";
+import TreeViewApp from "./components/redux-examples/tree-view/TreeViewApp";
+import RealWorldApp from "./components/redux-examples/real-world/RealWorldApp";
+import RTKDemo from "./components/redux-examples/rtk-demo/RTKDemo";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -29,6 +37,14 @@ root.render(
           <Route path="welcome" element={<Welcome />} />
           <Route path="advance" element={<Advance />} />
           <Route path="example" element={<IndexEx />} />
+          <Route path="redux" element={<ReduxApp />} />
+          <Route path="/redux/todos" element={<ToDoApp />} />
+          <Route path="/redux/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/redux/async" element={<AsyncApp />} />
+          <Route path="/redux/counter" element={<CounterApp />} />
+          <Route path="/redux/tree-view" element={<TreeViewApp />} />
+          <Route path="/redux/real-world" element={<RealWorldApp />} />
+          <Route path="/redux/rtk-demo" element={<RTKDemo />} />
           <Route path="submission-form" element={<SubmissionForm />} />
           <Route path="radom-joke" element={<RandomJoke />} />
           <Route path="password-validator" element={<PasswordValidatorApp />} />
@@ -41,7 +57,6 @@ root.render(
           <Route path="credit-card-validator" element={<CreditCardValidate />} />
           <Route path="create-domain-name-finder-app" element={<DomainFinderApp />} />
           <Route path="lyrics-finder-app" element={<LyricsFinderApp />} />
-
         </Route>
       </Routes>
     </BrowserRouter>

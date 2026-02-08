@@ -30,8 +30,8 @@ export default function StateShapeEditorWithArray() {
     <>
       <h3>Biến đổi mảng trong state</h3>
       <button onClick={handleClick}>Di chuyển hình tròn xuống!</button>
-      {shapes.map((shape) => (
-        <p>{shape.id + ", " + shape.type + ", " + shape.x + ", " + shape.y}</p>
+      {shapes.map((shape, index) => (
+        <p key={index}>{shape.id + ", " + shape.type + ", " + shape.x + ", " + shape.y}</p>
       ))}
     </>
   );

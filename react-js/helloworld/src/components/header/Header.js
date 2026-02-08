@@ -42,6 +42,7 @@ export default function Header() {
           <a href="/welcome">Welcome</a>
           <a href="/advance">Advance</a>
           <a href="/example">Example</a>
+          <a href="/redux">Redux</a>
           <a href="/">About</a>
           <button>Logout</button>
         </nav>

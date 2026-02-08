@@ -32,9 +32,9 @@ export default function StateInsertArray() {
       <input value={name} onChange={(e) => setName(e.target.value)} />
       <button onClick={handleClick}>Thêm</button>
       <ul>
-        {artists.map((artist) => (
+        {artists.map((artist, index) => (
           // Render các nghệ sĩ ở đây
-          <p>{artist.id + ", " + artist.name}</p>
+          <p key={index}>{artist.id + ", " + artist.name}</p>
         ))}
       </ul>
     </>

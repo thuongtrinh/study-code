@@ -5,6 +5,7 @@ import (
 	array_slice "hello-golang/array-slice"
 	"hello-golang/concurrency"
 	"hello-golang/controlstatement"
+	"hello-golang/errors"
 	function_method "hello-golang/function-method"
 	"hello-golang/fundamental"
 	"hello-golang/interfaces"
@@ -32,4 +33,5 @@ func main() {
 	pointers.MainPointer()
 	interfaces.MainInterface()
 	concurrency.MainConcurrency()
+	errors.MainErrors()
 }
