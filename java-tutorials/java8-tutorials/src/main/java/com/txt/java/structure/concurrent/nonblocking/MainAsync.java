@@ -3,6 +3,14 @@ package com.txt.java.structure.concurrent.nonblocking;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
+/*
+ví dụ về CompletableFuture từ Java 8. Nó minh họa:
+Xử lý bất đồng bộ — chạy 3 tác vụ song song (mỗi tác vụ gọi DataAsync với độ trễ khác nhau)
+CompletableFuture — dùng supplyAsync() để chạy trong thread pool
+Callback — thenAccept() để xử lý kết quả khi hoàn thành
+Đồng bộ hóa — CountDownLatch chờ cả 3 tác vụ xong
+Kết quả: thời gian thực thi ≈ 7 giây (6000ms từ task 3 + 1000ms sleep) thay vì 14 giây nếu chạy tuần tự.
+ */
 public class MainAsync {
 
     public static void main(String[] args) {
@@ -51,3 +59,12 @@ public class MainAsync {
         System.out.println("Synchronously printing " + data);
     }
 }
+
+/*
+CountDownLatch là một công cụ đồng bộ từ Java 5 (java.util.concurrent).
+Nó cho phép một thread chờ cho đến khi N tác vụ khác hoàn thành.
+Cách hoạt động:
+new CountDownLatch(3) — tạo một latch với counter = 3
+latch.countDown() — giảm counter đi 1 (gọi 3 lần → counter = 0)
+latch.await() — thread main bị chặn cho đến khi counter = 0
+*/

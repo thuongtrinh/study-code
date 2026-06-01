@@ -4,6 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * CustomFunctional - Demo Thiết Kế Và Sử Dụng Tùy Biến Functional Interface Trong Java 8
+ * <p>
+ * Tự định nghĩa các giao diện lập trình hàm chuyên biệt (Custom SAM) phục vụ tính toán, xử lý logic phức tạp.
+ * <p>
+ * Tính năng chính:
+ * - @FunctionalInterface Tự Chọn: Tạo các interface riêng biệt như Calculator, TaskHandler, Worship với duy nhất 1 hàm abstract.
+ * - Default Method Trong SAM: Viết hàm default (again, addMore, addCombiner) để tạo chuỗi pipeline xử lý trực tiếp trong Interface.
+ * - Method & Constructor Reference: Khởi tạo Functional Interface thông qua Utility::multiply, Utility::add hoặc Utility::new.
+ * - Kế Thừa Functional Interface: Interface DataReceiver extends DataCombiner để mở rộng hành động (hàm receive) mà không mất tính chất SAM.
+ * <p>
+ * Java version: Java 8+ (2014)
+ * <p>
+ * Tốt hơn Java cũ (Java 7-) gì?
+ * <p>
+ * | Java 7- (Cũ)                       | Java 8+ (Custom Functional Interface)   |
+ * |------------------------------------|----------------------------------------|
+ * | Lạm dụng Anonymous Class cồng kềnh  | Khởi tạo cực gọn bằng Lambda/Method Ref|
+ * | Interface chỉ chứa hàm trừu tượng  | Dùng default method để thiết kế Fluent |
+ * | Thiết kế callback phức tạp, lồng nhau| Hỗ trợ gom chuỗi xử lý (Chaining) sạch |
+ * | Ép kiểu Object thủ công (Generic cũ) | Định nghĩa Generic linh hoạt cho SAM  |
+ * | Không có cơ chế ràng buộc hàm đơn  | Dùng @FunctionalInterface tránh lỗi compiler|
+ *
+ * <p>
+ * Lợi ích của Custom Functional Interface:
+ * - Cho phép đóng gói các logic xử lý nghiệp vụ đặc thù (Domain-Specific) theo phong cách lập trình hàm.
+ * - Kết hợp linh hoạt giữa phương thức static/default để tái sử dụng code tối đa mà không phụ thuộc vào lớp trừu tượng (Abstract Class).
+ * - Tối ưu hóa việc gọi lại hàm xử lý (Callback) và tạo chuỗi biến đổi dữ liệu lồng nhau mà code vẫn tường minh, dễ hiểu.
+ */
 @FunctionalInterface
 interface Calculator {
     long calculate(long num1, long num2);

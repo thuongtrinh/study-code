@@ -9,6 +9,34 @@ import java.util.function.LongConsumer;
 
 import com.txt.java.structure.model.Student;
 
+/**
+ * AcceptEitherDemo - Demo Consumer và ForEach của Java 8
+ * <p>
+ * Duyệt qua các phần tử của Collection/Array và xử lý hành động (Action) bằng Functional Interface.
+ * <p>
+ * Tính năng chính:
+ * - ConsumerForEach: Sử dụng Iterable.forEach() kết hợp Consumer lambda để duyệt List Student.
+ * - Primitive Consumer: Sử dụng IntConsumer, LongConsumer, DoubleConsumer với Arrays.stream() để xử lý mảng nguyên thủy.
+ * <p>
+ * Java version: Java 8+ (2014)
+ * <p>
+ * Tốt hơn Java cũ (Java 7-) gì?
+ * <p>
+ * | Java 7- (Cũ)                       | Java 8+ (Consumer & Stream)            |
+ * |------------------------------------|----------------------------------------|
+ * | Dùng vòng lặp for/foreach cơ bản   | Dùng Iterable.forEach() gọn gàng       |
+ * | Code dài dòng (Boilerplate)        | Dùng Lambda expression / Method Ref    |
+ * | Tách biệt logic lặp khó khăn       | Tách riêng cơ chế lặp và hành động     |
+ * | Autoboxing tốn memory cho primitive| Primitive Consumer chạy trực tiếp gốc  |
+ * | Khó chuyển đổi sang chạy song song | Dễ dàng chuyển sang parallelStream()   |
+ *
+ * <p>
+ * Lợi ích của Consumer & ForEach:
+ * - Code ngắn gọn, dễ đọc, viết trên một dòng (Fluent API).
+ * - Tránh ép kiểu ngầm định (No Autoboxing) cho các kiểu dữ liệu nguyên thủy như int, long, double.
+ * - Hỗ trợ lập trình hàm (Functional Programming) giúp mã nguồn linh hoạt hơn.
+ */
+
 public class ConsumerForEach {
 
     public static void main(String[] args) {

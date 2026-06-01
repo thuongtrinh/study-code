@@ -6,6 +6,36 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
+/**
+ * DemoCreateStream - Demo các cách tạo Stream trong Java 8+
+ *
+ * Stream API là tính năng mới của Java 8 cho phép xử lý dữ liệu hàm số,
+ * làm code sạch hơn, dễ đọc hơn và hỗ trợ parallel processing.
+ *
+ * Các chức năng chính:
+ * 1. streamFromArray() - Tạo Stream từ Array bằng Arrays.stream() hoặc Stream.of()
+ * 2. streamFromCollection() - Tạo Stream từ Collection (List, Set, etc)
+ * 3. streamUsingGenerate() - Tạo Stream vô hạn từ Supplier, dùng limit() giới hạn
+ * 4. streamUsingIterate() - Tạo Stream vô hạn từ hàm iterate, dùng limit() giới hạn
+ * 5. streamUsingRegex() - Tạo Stream từ Regex Pattern.splitAsStream()
+ *
+ * Tốt hơn Java 7 cũ gì?
+ * ┌──────────────────────┬───────────────────────────────────────┐
+ * │ Java 7- (for loop)   │ Java 8+ (Stream API)                  │
+ * ├──────────────────────┼───────────────────────────────────────┤
+ * │ Code dài, phức tạp   │ Code ngắn, declarative                │
+ * │ Khó đọc intent       │ Rõ ràng ý đồ xử lý                    │
+ * │ Không lazy evaluate  │ Lazy evaluation - hiệu năng tốt       │
+ * │ Không parallel       │ Hỗ trợ parallelStream()               │
+ * │ Quản lý state phức   │ Functional, immutable                 │
+ * └──────────────────────┴───────────────────────────────────────┘
+ *
+ * Ví dụ so sánh:
+ * Java 7: for (String s : list) { System.out.println(s); }
+ * Java 8: list.stream().forEach(System.out::println);
+ *
+ * Java version: Java 8+ (2014)
+ */
 public class DemoCreateStream {
 
     public static void main(String[] args) {
