@@ -1,4 +1,4 @@
-package com.txt.java.structure.java9;
+package com.txt.java.structure.version.java9;
 
 /**
  * PrivateInterfaceMethodsDemo - Cơ Chế Đóng Gói Với Hàm Private Bên Trong Interface Ở Java 9

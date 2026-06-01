@@ -1,6 +1,5 @@
-package com.txt.java.structure.util.stream;
+package com.txt.java.structure.stream;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
